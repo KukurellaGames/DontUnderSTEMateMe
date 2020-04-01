@@ -48,7 +48,6 @@ public class FireThrower : MonoBehaviour
             fireCollider.enabled = false;
             yield return new WaitForSeconds(IdleTime);
         }
-        
-
+      
     }
 }
