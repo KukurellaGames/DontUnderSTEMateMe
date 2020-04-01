@@ -16,7 +16,6 @@ public class AbOpenDoor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //iconAbility.enabled = true;
         iconAbility.gameObject.SetActive(true);
         Destroy(this.gameObject);
     }
