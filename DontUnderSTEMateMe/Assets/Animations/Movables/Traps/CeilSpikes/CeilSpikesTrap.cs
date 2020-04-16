@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CeilSpikesTrap : MonoBehaviour
+public class CeilSpikesTrap : TrapTemplate
 {
     [SerializeField] private Animator spikeAnimator;
-    public bool activUp;
-    public bool activDown;
+    private bool Up = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,23 +15,28 @@ public class CeilSpikesTrap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activUp)
-        {
-            SpikesUp();
-            activUp = false;
-        }
-        if (activDown)
+    }
+    public override void SpikesMovement()
+    {
+        if(Up)
         {
             SpikesDown();
-            activDown = false;
         }
+        else 
+        {
+            SpikesUp();
+        }
+            
     }
+
     public void SpikesUp()
     {
         spikeAnimator.SetTrigger("Up");
+        Up = true;
     }
     public void SpikesDown()
     {
         spikeAnimator.SetTrigger("Down");
+        Up = false;
     }
 }

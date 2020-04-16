@@ -5,35 +5,49 @@ using UnityEngine;
 public class HandlerScript : MonoBehaviour
 {
     [SerializeField] private Animator handlerAnimator;
-    public bool active;
-    public bool deactive;
+    [SerializeField] private List<TrapTemplate> spikesList;
+
+    private bool active = false;
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (active)
-        {
-            HandlerDown();
-            active = false;
-        }
-        if (deactive)
-        {
-            HandlerUp();
-            deactive = false;
-        }
+        if (Input.GetKeyDown(KeyCode.E))
+            OnHandler();
     }
-
     public void HandlerDown()
     {
         handlerAnimator.SetTrigger("Active");
+        active = true;
     }
     public void HandlerUp()
     {
         handlerAnimator.SetTrigger("Deactive");
+        active = false;
+    }
+
+    public void OnHandler()
+    {
+        if(active)
+        {
+            HandlerUp();
+        }
+        else 
+        {
+            HandlerDown();
+        }
+        Invoke("NotifySpikes", 1);
+    }
+
+    private void NotifySpikes()
+    {
+        foreach (TrapTemplate spike in spikesList)
+        {
+            spike.SpikesMovement();
+        }
     }
 }

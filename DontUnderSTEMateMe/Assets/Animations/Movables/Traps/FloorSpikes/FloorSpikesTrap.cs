@@ -2,41 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FloorSpikesTrap : MonoBehaviour
+public class FloorSpikesTrap : TrapTemplate
 {
     [SerializeField] private Animator spikeAnimator;
-    public bool activUp;
-    public bool activDown;
+    private AudioSource audio;
+    private bool Up;
     // Start is called before the first frame update
     void Start()
     {
-        //primera opcion
-        
-        //segunda opcion
+        audio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    //si no se hace nada, por rendimiento se deberia eliminar
-    void Update()
+    public override void SpikesMovement()
     {
-        if(activUp)
-        {
-            SpikesUp();
-            activUp = false;
-        }
-        if (activDown)
+        if (Up)
         {
             SpikesDown();
-            activDown = false;
         }
+        else
+        {
+            SpikesUp();
+        }
+
     }
 
     public void SpikesUp()
     {
         spikeAnimator.SetTrigger("Up");
+        audio.Play();
+        Up = true;
     }
     public void SpikesDown()
     {
         spikeAnimator.SetTrigger("Down");
+        audio.Play();
+        Up = false;
     }
 }
