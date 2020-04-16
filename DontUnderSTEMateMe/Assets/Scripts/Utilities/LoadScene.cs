@@ -41,7 +41,7 @@ public class LoadScene : MonoBehaviour
     }
 
     private IEnumerator ShowLoadScene(string nameScene)
-    {
+    { 
         loadImage.gameObject.SetActive(true);
         Color c = loadImage.color;
 
