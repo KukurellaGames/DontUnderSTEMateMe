@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikesTrap : MonoBehaviour
+public class CeilSpikesTrap : MonoBehaviour
 {
     [SerializeField] private Animator spikeAnimator;
     public bool activUp;
@@ -10,16 +10,13 @@ public class SpikesTrap : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //primera opcion
-
-        //segunda opcion
+        
     }
 
     // Update is called once per frame
-    //si no se hace nada, por rendimiento se deberia eliminar
     void Update()
     {
-        if(activUp)
+        if (activUp)
         {
             SpikesUp();
             activUp = false;
@@ -30,7 +27,6 @@ public class SpikesTrap : MonoBehaviour
             activDown = false;
         }
     }
-
     public void SpikesUp()
     {
         spikeAnimator.SetTrigger("Up");

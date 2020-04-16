@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 974469950290131212}
   - component: {fileID: 974469950288943116}
   - component: {fileID: 974469950300624910}
+  - component: {fileID: 228393998}
   m_Layer: 0
   m_Name: SD_Trap_SpikeBlock_01
   m_TagString: Untagged
@@ -88,7 +89,7 @@ Animator:
   m_GameObject: {fileID: 974469950291154422}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 6baf96d78681823448f4ef8973fb92b7, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c388415a928bde4782e0399f19391db, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -97,3 +98,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &228393998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974469950291154422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 290d1b40ae32558469068cecffc06faf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikeAnimator: {fileID: 974469950300624910}
+  activUp: 0
+  activDown: 0
