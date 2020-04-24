@@ -1428,7 +1428,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 786898674}
+<<<<<<< Updated upstream:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level02.unity
   m_RootOrder: 58
+=======
+  m_RootOrder: 56
+>>>>>>> Stashed changes:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level2.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &140152142
 PrefabInstance:
@@ -4551,7 +4555,11 @@ PrefabInstance:
     - target: {fileID: 9002548334731284965, guid: 82adaeb35fc4b6045833c072503aa410,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level02.unity
       value: -20.75
+=======
+      value: -20.63
+>>>>>>> Stashed changes:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 9002548334731284965, guid: 82adaeb35fc4b6045833c072503aa410,
         type: 3}
@@ -13247,7 +13255,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440282, guid: 2c71d36f0694be041a98610547fecfe1, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< Updated upstream:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level02.unity
       value: 39.86
+=======
+      value: 39.891354
+>>>>>>> Stashed changes:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level2.unity
       objectReference: {fileID: 0}
     - target: {fileID: 440282, guid: 2c71d36f0694be041a98610547fecfe1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -13267,7 +13279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 440282, guid: 2c71d36f0694be041a98610547fecfe1, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level02.unity
       value: 57
+=======
+      value: 55
+>>>>>>> Stashed changes:DontUnderSTEMateMe/Assets/Scenes/Puzzle/Level2.unity
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c71d36f0694be041a98610547fecfe1, type: 3}
