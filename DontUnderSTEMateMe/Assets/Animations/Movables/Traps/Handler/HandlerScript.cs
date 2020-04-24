@@ -11,7 +11,7 @@ public class HandlerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        spikesList[2].SpikesMovement();
     }
 
     private void Update()
