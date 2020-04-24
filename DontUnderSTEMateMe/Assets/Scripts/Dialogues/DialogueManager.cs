@@ -17,7 +17,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     protected TextMeshProUGUI displayText;
 
-    string activeSentence;
+    private string activeSentence;
+
+    private bool isInConversation = false;
 
     [SerializeField]
     protected float typingSpeed;
@@ -75,19 +77,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isInConversation = true;
             dialoguePanel.SetActive(true);
             StartDialogue();
-        }
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            if (Input.GetKeyDown(KeyCode.Return) && displayText.text == activeSentence)
-            {
-                DisplayNextSentence();
-            }
         }
     }
 
@@ -95,8 +87,20 @@ public class DialogueManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            isInConversation = false;
             dialoguePanel.SetActive(false);
             StopAllCoroutines();
+        }
+    }
+
+    private void Update()
+    {
+        if (isInConversation)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) && displayText.text == activeSentence)
+            {
+                DisplayNextSentence();
+            }
         }
     }
 }
