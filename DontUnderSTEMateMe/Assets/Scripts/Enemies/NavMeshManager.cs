@@ -9,17 +9,14 @@ public class NavMeshManager : MonoBehaviour
     public Transform followObjective;
 
     private NavMeshAgent navMeshAgent;
-    private Animator anim;
     // Start is called before the first frame update
     void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
     }
 
     public void ActualizeObjectivePointNavMeshAgent(Vector3 ObjectivePoint)
     {
-        anim.SetBool("Run Forward", true);
         navMeshAgent.destination = ObjectivePoint;
         navMeshAgent.isStopped = false;
     }
