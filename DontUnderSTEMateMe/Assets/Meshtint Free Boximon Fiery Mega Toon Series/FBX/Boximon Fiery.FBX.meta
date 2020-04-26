@@ -1,76 +1,86 @@
 fileFormatVersion: 2
-guid: b061ae134f6f1184eafbd5a4797f1571
+guid: 9213d9c7c87ed1448b0ca6a582ac8776
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Rig
-    100004: RigHead
-    100006: RigJaw
-    100008: RigLArm1
-    100010: RigLArm1Gizmo
-    100012: RigLArm2
-    100014: RigLArm2Gizmo
-    100016: RigLArmPalm
-    100018: RigLArmPalmGizmo
-    100020: RigLLeg1
-    100022: RigLLeg2
-    100024: RigLLegAnkle
-    100026: RigLLegPlatform
-    100028: RigNeck1
-    100030: RigNeck2
-    100032: RigPelvis
-    100034: RigPelvisGizmo
-    100036: RigRArm1
-    100038: RigRArm1Gizmo
-    100040: RigRArm2
-    100042: RigRArm2Gizmo
-    100044: RigRArmPalm
-    100046: RigRArmPalmGizmo
-    100048: RigRibcage
-    100050: RigRibcageGizmo
-    100052: RigRLeg1
-    100054: RigRLeg2
-    100056: RigRLegAnkle
-    100058: RigRLegPlatform
-    100060: RigSpine1
-    100062: RigSpine2
-    100064: RigSpine3
+    100002: Boximon Fiery
+    100004: Rig
+    100006: RigHead
+    100008: RigJaw
+    100010: RigJawGizmo
+    100012: RigLArm1
+    100014: RigLArm1Gizmo
+    100016: RigLArm2
+    100018: RigLArm2Gizmo
+    100020: RigLArmPalm
+    100022: RigLArmPalmGizmo
+    100024: RigLLeg1
+    100026: RigLLeg2
+    100028: RigLLegAnkle
+    100030: RigLLegPlatform
+    100032: RigNeck1
+    100034: RigNeck2
+    100036: RigPelvis
+    100038: RigPelvisGizmo
+    100040: RigRArm1
+    100042: RigRArm1Gizmo
+    100044: RigRArm2
+    100046: RigRArm2Gizmo
+    100048: RigRArmPalm
+    100050: RigRArmPalmGizmo
+    100052: RigRibcage
+    100054: RigRibcageGizmo
+    100056: RigRLeg1
+    100058: RigRLeg2
+    100060: RigRLegAnkle
+    100062: RigRLegPlatform
+    100064: RigSpine1
+    100066: RigSpine2
+    100068: RigSpine3
     400000: //RootNode
-    400002: Rig
-    400004: RigHead
-    400006: RigJaw
-    400008: RigLArm1
-    400010: RigLArm1Gizmo
-    400012: RigLArm2
-    400014: RigLArm2Gizmo
-    400016: RigLArmPalm
-    400018: RigLArmPalmGizmo
-    400020: RigLLeg1
-    400022: RigLLeg2
-    400024: RigLLegAnkle
-    400026: RigLLegPlatform
-    400028: RigNeck1
-    400030: RigNeck2
-    400032: RigPelvis
-    400034: RigPelvisGizmo
-    400036: RigRArm1
-    400038: RigRArm1Gizmo
-    400040: RigRArm2
-    400042: RigRArm2Gizmo
-    400044: RigRArmPalm
-    400046: RigRArmPalmGizmo
-    400048: RigRibcage
-    400050: RigRibcageGizmo
-    400052: RigRLeg1
-    400054: RigRLeg2
-    400056: RigRLegAnkle
-    400058: RigRLegPlatform
-    400060: RigSpine1
-    400062: RigSpine2
-    400064: RigSpine3
-    7400000: Run Forward W Root
+    400002: Boximon Fiery
+    400004: Rig
+    400006: RigHead
+    400008: RigJaw
+    400010: RigJawGizmo
+    400012: RigLArm1
+    400014: RigLArm1Gizmo
+    400016: RigLArm2
+    400018: RigLArm2Gizmo
+    400020: RigLArmPalm
+    400022: RigLArmPalmGizmo
+    400024: RigLLeg1
+    400026: RigLLeg2
+    400028: RigLLegAnkle
+    400030: RigLLegPlatform
+    400032: RigNeck1
+    400034: RigNeck2
+    400036: RigPelvis
+    400038: RigPelvisGizmo
+    400040: RigRArm1
+    400042: RigRArm1Gizmo
+    400044: RigRArm2
+    400046: RigRArm2Gizmo
+    400048: RigRArmPalm
+    400050: RigRArmPalmGizmo
+    400052: RigRibcage
+    400054: RigRibcageGizmo
+    400056: RigRLeg1
+    400058: RigRLeg2
+    400060: RigRLegAnkle
+    400062: RigRLegPlatform
+    400064: RigSpine1
+    400066: RigSpine2
+    400068: RigSpine3
+    2100000: 01 - Default
+    2300000: //RootNode
+    2300002: Boximon Fiery
+    3300000: //RootNode
+    3300002: Boximon Fiery
+    4300000: Boximon Fiery
     9500000: //RootNode
+    13700000: Boximon Fiery
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
@@ -85,16 +95,14 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'RigLLeg1' : position error =
+      148.947418 mm\n\t'RigLLeg2' : position error = 6.828795 mm\n\t'RigLLegAnkle'
+      : position error = 12.608997 mm\n\t'RigRLeg1' : position error = 148.947510
+      mm\n\t'RigRLeg2' : position error = 6.832346 mm\n\t'RigRLegAnkle' : position
+      error = 12.611762 mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar to
-      improve retargeting quality.\n\t'RigSpine1' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'RigSpine2' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'RigSpine3'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'RigLArmPalm'
-      has scale animation that will be discarded.\n\t'RigNeck1' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -106,35 +114,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Run Forward W Root
-      takeName: Take 001
-      firstFrame: 0
-      lastFrame: 20
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
