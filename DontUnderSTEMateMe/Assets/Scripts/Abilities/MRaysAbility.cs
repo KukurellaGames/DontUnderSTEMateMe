@@ -15,6 +15,7 @@ public class MRaysAbility : Ability
         abilityType = AbilityTypes.M_RAYS;
 
         ResultMesh.GetComponent<MeshRenderer>().enabled = false;
+        ResultMesh.GetComponent<Collider>().enabled = false;
 
         IsActivated = false;
     }
@@ -40,6 +41,7 @@ public class MRaysAbility : Ability
     {
         /* Show result mesh */
         ResultMesh.GetComponent<MeshRenderer>().enabled = true;
+        ResultMesh.GetComponent<Collider>().enabled = true;
         GetComponent<BoxCollider>().enabled = false;
         yield return new WaitForSeconds(0.0f);
 
