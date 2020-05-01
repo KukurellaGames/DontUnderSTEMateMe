@@ -13,6 +13,7 @@ public class UnlockingAbility : Ability
 
     private void Start()
     {
+        abilityType = AbilityTypes.UNLOCKING;
         // Get animator reference
         animator = GetComponent<Animator>();
         if (animator == null)

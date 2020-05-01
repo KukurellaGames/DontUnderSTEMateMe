@@ -21,6 +21,7 @@ public abstract class Ability : MonoBehaviour
 
 public enum AbilityTypes
 {
+    NONE,
     UNLOCKING,
-    NONE
+    M_RAYS
 }
