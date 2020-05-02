@@ -5853,7 +5853,7 @@ ParticleSystem:
     enabled: 1
     x:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -5906,7 +5906,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0
       minScalar: 0
       maxCurve:
@@ -5959,9 +5959,9 @@ ParticleSystem:
         m_RotationOrder: 4
     curve:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.7853982
-      minScalar: 0.7853982
+      minMaxState: 3
+      scalar: 1.0471976
+      minScalar: 0.17453292
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -18925,6 +18925,8 @@ MonoBehaviour:
   ResultMesh: {fileID: 7441007248943588190}
   IdleParticles: {fileID: 1242784153}
   ClimaxParticles: {fileID: 72460479}
+  MaxAlpha: 0.4
+  eachStepIncrement: 0.01
 --- !u!1 &7441007248943588190
 GameObject:
   m_ObjectHideFlags: 0
