@@ -17,6 +17,7 @@ public class ChangeScene : MonoBehaviour
 
 public enum Scenes
 {
-    MainScene,
-    Level01
+    MainScreen,
+    Level01,
+    Level02
 }
