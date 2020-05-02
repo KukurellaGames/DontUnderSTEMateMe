@@ -42,12 +42,6 @@ public class MRaysAbility : Ability
         IsActivated = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     #region IAbility
     /// <summary>
     /// This functions is called by the player when

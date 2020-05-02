@@ -12,8 +12,9 @@ public class PlayerAbilityManager : MonoBehaviour
 
     private void Start()
     {
-        activeAbility = AbilityTypes.M_RAYS;
-        //activeAbility = AbilityTypes.UNLOCKING;
+        //activeAbility = AbilityTypes.RESILIENT;
+        //activeAbility = AbilityTypes.M_RAYS;
+        activeAbility = AbilityTypes.UNLOCKING;
     }
 
     private void Update()

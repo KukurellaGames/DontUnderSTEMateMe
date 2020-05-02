@@ -23,5 +23,6 @@ public enum AbilityTypes
 {
     NONE,
     UNLOCKING,
-    M_RAYS
+    M_RAYS,
+    RESILIENT
 }
