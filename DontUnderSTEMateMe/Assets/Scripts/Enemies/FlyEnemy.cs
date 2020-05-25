@@ -14,8 +14,7 @@ public class FlyEnemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private float distMax;
-    [SerializeField]
-    private GameObject _principalCharacter;
+    public GameObject _principalCharacter;
     [SerializeField]
     private float _offset;
     private Animator anim;
@@ -23,18 +22,25 @@ public class FlyEnemy : MonoBehaviour
     private bool _down = false;
     private float posUp;
     private float posDown;
-
+    private Quaternion initialRotation;
 
     private void Awake()
     {
         posUp = this.transform.localPosition.y + _offset;
         posDown = this.transform.localPosition.y - _offset;
         anim = GetComponent<Animator>();
+        initialRotation = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(_principalCharacter == null)
+        {
+            transform.rotation = initialRotation;
+            _principalCharacter = GameObject.FindWithTag("Player");
+        }
+
         float _dist = Vector3.Distance(_principalCharacter.transform.position, transform.position);
         if(_dist <= distMax)
         {
@@ -80,6 +86,5 @@ public class FlyEnemy : MonoBehaviour
     private void Destroy()
     {
         Destroy(bullet);
-        Debug.Log("hola");
     }
 }
