@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Pause : MonoBehaviour
 {
-    bool active;
-    Canvas canvas;
+    private bool active;
+    private Canvas canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             Continue();
         }
@@ -28,6 +28,5 @@ public class Pause : MonoBehaviour
         active = !active;
         canvas.enabled = active;
         Time.timeScale = (active) ? 0 : 1f;
-
     }
 }
