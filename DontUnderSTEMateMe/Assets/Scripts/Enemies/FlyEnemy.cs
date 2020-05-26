@@ -14,7 +14,7 @@ public class FlyEnemy : MonoBehaviour
     private GameObject bulletPrefab;
     [SerializeField]
     private float distMax;
-    public GameObject _principalCharacter;
+    private GameObject _principalCharacter;
     [SerializeField]
     private float _offset;
     private Animator anim;
@@ -30,6 +30,7 @@ public class FlyEnemy : MonoBehaviour
         posDown = this.transform.localPosition.y - _offset;
         anim = GetComponent<Animator>();
         initialRotation = transform.rotation;
+        _principalCharacter = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
