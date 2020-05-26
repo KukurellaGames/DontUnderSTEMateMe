@@ -5,7 +5,7 @@ using UnityEngine;
 public class FloorSpikesTrap : TrapTemplate
 {
     [SerializeField] private Animator spikeAnimator;
-    private AudioSource audio;
+    private new AudioSource audio;
     private bool Up;
     // Start is called before the first frame update
     void Start()
