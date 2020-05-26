@@ -7021,12 +7021,12 @@ PrefabInstance:
     - target: {fileID: 974469950290862668, guid: 80f5729dda72eb34ea45fd94329fdf33,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.13000107
+      value: 0.1300011
       objectReference: {fileID: 0}
     - target: {fileID: 974469950290862668, guid: 80f5729dda72eb34ea45fd94329fdf33,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.029999971
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 974469950290862668, guid: 80f5729dda72eb34ea45fd94329fdf33,
         type: 3}
@@ -7088,7 +7088,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SD_Trap_SpikeBlock_01 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 974469950300624910, guid: 80f5729dda72eb34ea45fd94329fdf33,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fde22698e35ef124a9204053fd179764, type: 2}
+    m_RemovedComponents:
+    - {fileID: 228393998, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
 --- !u!1 &217066299 stripped
 GameObject:
@@ -9926,17 +9932,17 @@ PrefabInstance:
     - target: {fileID: 3028816270064214321, guid: 8dbde3b9a2e91c447b12fb59f449da87,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.76
+      value: 35.82
       objectReference: {fileID: 0}
     - target: {fileID: 3028816270064214321, guid: 8dbde3b9a2e91c447b12fb59f449da87,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.110000014
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: 3028816270064214321, guid: 8dbde3b9a2e91c447b12fb59f449da87,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.52
+      value: 16.33
       objectReference: {fileID: 0}
     - target: {fileID: 3028816270064214321, guid: 8dbde3b9a2e91c447b12fb59f449da87,
         type: 3}
@@ -20176,7 +20182,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SD_Trap_SpikeBlock_01 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 974469950300624910, guid: 80f5729dda72eb34ea45fd94329fdf33,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 974469950300624910, guid: 80f5729dda72eb34ea45fd94329fdf33,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: fde22698e35ef124a9204053fd179764, type: 2}
+    m_RemovedComponents:
+    - {fileID: 228393998, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
 --- !u!1001 &624745321
 PrefabInstance:
@@ -38385,8 +38402,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 214851334}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1175556221
-MeshCollider:
+--- !u!65 &1175556221
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -38395,10 +38412,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300000, guid: 6baf96d78681823448f4ef8973fb92b7, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 8.0222645, z: 5}
+  m_Center: {x: 0, y: 3.422985, z: 0}
 --- !u!1001 &1177344099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71487,7 +71503,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SD_Trap_SpikeBlock_01
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 974469950300624910, guid: 80f5729dda72eb34ea45fd94329fdf33,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 228393998, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 80f5729dda72eb34ea45fd94329fdf33, type: 3}
 --- !u!1 &974469950258823864 stripped
 GameObject:

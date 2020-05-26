@@ -8,7 +8,7 @@ public class FloorSpikesTrap : TrapTemplate
     private new AudioSource audio;
     private bool Up;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audio = GetComponent<AudioSource>();
     }
@@ -23,7 +23,6 @@ public class FloorSpikesTrap : TrapTemplate
         {
             SpikesUp();
         }
-
     }
 
     public void SpikesUp()
