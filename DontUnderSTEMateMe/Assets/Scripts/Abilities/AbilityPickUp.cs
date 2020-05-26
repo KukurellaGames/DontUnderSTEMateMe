@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class AbilityPickUp : MonoBehaviour
 {
-    [SerializeField]
-    protected ParticleSystem[] particleSystems;
+    [Header("Ability Type")]
+    [SerializeField] protected AbilityTypes abilityType;
+
+    [Header("Particles")]
+    [SerializeField] protected ParticleSystem[] particleSystems;
 
     [Header("Climax properties")]
     [SerializeField] protected ParticleSystem climaxParticles;
     [SerializeField] protected AudioSource climaxAudio;
     [SerializeField] protected float ClimaxSoundDelay = 1.5f;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Ability manager reference
+    [Header("Ability Manager")]
+    [Tooltip("This is the name of the game object that is containing ")]
+    [SerializeField] private string AbilityManagerName;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -41,6 +42,11 @@ public class AbilityPickUp : MonoBehaviour
         yield return new WaitForSeconds(ClimaxSoundDelay);
         climaxAudio.Play();
 
+        NotifyAbilityPicked();
+    }
 
+    private void NotifyAbilityPicked()
+    {
+        GameObject.Find(AbilityManagerName).SendMessage("AbilityPickedUp", abilityType);
     }
 }

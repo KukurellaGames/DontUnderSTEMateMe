@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAbilityManager : MonoBehaviour
 {
-    private AbilityTypes activeAbility;
+    private Dictionary<AbilityTypes, bool> ActiveAbility;
 
     // Ability
     private bool canUseAbility = false;
@@ -12,9 +12,7 @@ public class PlayerAbilityManager : MonoBehaviour
 
     private void Start()
     {
-        activeAbility = AbilityTypes.RESILIENT;
-        //activeAbility = AbilityTypes.M_RAYS;
-        //activeAbility = AbilityTypes.UNLOCKING;
+        initDictionary();
     }
 
     private void Update()
@@ -22,8 +20,19 @@ public class PlayerAbilityManager : MonoBehaviour
         if(Input.GetKey("e"))
         {
             Interact();
+            Debug.Log("Click");
         }
+    }
 
+    private void initDictionary()
+    {
+        ActiveAbility = new Dictionary<AbilityTypes, bool>();
+
+        var values = AbilityTypes.GetValues(typeof(AbilityTypes));
+        foreach(AbilityTypes value in values)
+        {
+            ActiveAbility[value] = false;
+        }
     }
 
     /// <summary>
@@ -72,9 +81,19 @@ public class PlayerAbilityManager : MonoBehaviour
             return false;
         }
 
-        if (ability.abilityType == activeAbility)
-            return true;
-        else
-            return false;
+        // Check value in dictionary
+        return ActiveAbility[ability.abilityType];
+
+    }
+
+    public void AbilityPickedUp(AbilityTypes type)
+    {
+        Debug.Log("Notificationnnnnnnnnn");
+        if(type == AbilityTypes.NONE)
+        {
+            Debug.LogError("[PlayerAbilityManager] This ability is set to NONE");
+            return;
+        }
+        ActiveAbility[type] = true;
     }
 }
