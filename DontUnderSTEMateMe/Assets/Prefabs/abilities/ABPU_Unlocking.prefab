@@ -23619,7 +23619,9 @@ MonoBehaviour:
   climaxParticles: {fileID: 7438778100267720169}
   climaxAudio: {fileID: 2054206494}
   ClimaxSoundDelay: 0.3
+  NotificationDelay: 1.4
   AbilityManagerName: Fighter_Controller
+  AbilityUIName: AbilityUI
 --- !u!82 &2054206494
 AudioSource:
   m_ObjectHideFlags: 0

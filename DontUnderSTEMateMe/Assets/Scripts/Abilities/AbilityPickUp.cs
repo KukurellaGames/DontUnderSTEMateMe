@@ -14,11 +14,14 @@ public class AbilityPickUp : MonoBehaviour
     [SerializeField] protected ParticleSystem climaxParticles;
     [SerializeField] protected AudioSource climaxAudio;
     [SerializeField] protected float ClimaxSoundDelay = 1.5f;
+    [SerializeField] protected float NotificationDelay = 1.5f;
 
     //Ability manager reference
     [Header("Ability Manager")]
-    [Tooltip("This is the name of the game object that is containing ")]
+    [Tooltip("This is the name of the game object that is containing the ability manager")]
     [SerializeField] private string AbilityManagerName;
+    [Tooltip("This is the name of the game object that is containing the ability UI")]
+    [SerializeField] private string AbilityUIName;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -42,11 +45,13 @@ public class AbilityPickUp : MonoBehaviour
         yield return new WaitForSeconds(ClimaxSoundDelay);
         climaxAudio.Play();
 
+        yield return new WaitForSeconds(NotificationDelay);
         NotifyAbilityPicked();
     }
 
     private void NotifyAbilityPicked()
     {
         GameObject.Find(AbilityManagerName).SendMessage("AbilityPickedUp", abilityType);
+        GameObject.Find(AbilityUIName).SendMessage("AbilityPickedUp", abilityType);
     }
 }

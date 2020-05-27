@@ -88,7 +88,6 @@ public class PlayerAbilityManager : MonoBehaviour
 
     public void AbilityPickedUp(AbilityTypes type)
     {
-        Debug.Log("Notificationnnnnnnnnn");
         if(type == AbilityTypes.NONE)
         {
             Debug.LogError("[PlayerAbilityManager] This ability is set to NONE");
