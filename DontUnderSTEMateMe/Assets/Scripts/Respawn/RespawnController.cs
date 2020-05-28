@@ -11,6 +11,11 @@ public class RespawnController : MonoBehaviour
     {
         return respawn;
     }
+
+    public void setRespawn(GameObject _res)
+    {
+        respawn = _res;
+    }
     //AQUÍ METER FUNCIONES DE RESPAWN DE PERSONAJE
         
     // Start is called before the first frame update
