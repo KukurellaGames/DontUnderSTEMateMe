@@ -1,13 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CollectableSystem : MonoBehaviour
 {
-    [SerializeField] protected string text;
+    [SerializeField] protected string descriptionCollectable;
+    [SerializeField] protected string titleCollectable;
+    [SerializeField] protected Sprite spriteCollectable;
+
     [SerializeField] protected Canvas collectableCanvas;
-    
+    [SerializeField] protected TextMeshProUGUI descriptionCanvas;
+    [SerializeField] protected TextMeshProUGUI titleCanvas;
+    [SerializeField] protected Image imageCanvas;
+
     // Update is called once per frame
     void Update()
     {
@@ -18,9 +25,10 @@ public class CollectableSystem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            Text collectableText = collectableCanvas.GetComponentInChildren<Text>();
-            collectableText.text = text;
+            descriptionCanvas.text = descriptionCollectable;
+            titleCanvas.text = titleCollectable;
             collectableCanvas.enabled = true;
+            imageCanvas.sprite = spriteCollectable;
             //añadir a informacion persistente
             Time.timeScale = 0;
             Destroy(this.gameObject);
