@@ -22,4 +22,12 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    public void OnCollectableShow()
+    {
+        foreach (Animator animator in animators)
+        {
+            animator.SetTrigger("ShowCollectableList");
+        }
+    }
+
 }
