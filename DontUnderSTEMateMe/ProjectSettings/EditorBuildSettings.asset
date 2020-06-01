@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle/Level01.unity
     guid: 7f966dfc7feea5f4890c7c71ff332e24
+  - enabled: 1
+    path: Assets/Scenes/Contact.unity
+    guid: 3519042b311ec994da462de339340ec6
   m_configObjects: {}

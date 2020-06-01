@@ -19,5 +19,6 @@ public enum Scenes
 {
     MainScreen,
     Level01,
-    Level02
+    Level02,
+    Contact
 }
