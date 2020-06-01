@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,12 +23,20 @@ public class StatePursuit : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        if(!visionManager.canSeeToThePlayer(out hit, true))
+        try
         {
-            anim.SetBool("Run Forward", false);
-            statesMachine.ActivateState(statesMachine.StateAlert);
-            return;
+            if (!visionManager.canSeeToThePlayer(out hit, true))
+            {
+                anim.SetBool("Run Forward", false);
+                statesMachine.ActivateState(statesMachine.StateAlert);
+                return;
+            }
         }
+        catch(Exception e)
+        {
+            statesMachine.ActivateState(statesMachine.StatePatrol);
+        }
+
         navMeshManager.ActualizeObjectivePointNavMeshAgent();
     }
 
