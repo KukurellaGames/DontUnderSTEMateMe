@@ -1,43 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Invector.vCharacterController;
 
 public class FallDamage : MonoBehaviour
 {
     protected float lastPositionY = 0.0f;
     protected float fallDistance = 0.0f;
 
-    protected CharacterController controller;
+    protected vThirdPersonController controller;
+
+    protected Transform player;
+
+    protected GameObject character;
 
     [SerializeField]
     protected float maxHeight;
 
     [SerializeField]
-    protected Transform player;
-
-    [SerializeField]
-    private GameObject character;
-
-    [SerializeField]
-    private GameObject respawn;
+    protected GameObject respawn;
 
     // Start is called before the first frame update
     void Start()
     {
-        controller = GameObject.Find("Fighter_Controller").GetComponent<CharacterController>();
+        controller = this.GetComponent<vThirdPersonController>();
+        player = this.transform;
+        character = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lastPositionY > player.transform.position.y)
+        if (lastPositionY > player.transform.position.y && !controller.isGrounded)
             fallDistance += lastPositionY - player.transform.position.y;
 
         lastPositionY = player.transform.position.y;
 
-        if(fallDistance >= 5.0f && controller.isGrounded)
+        if(fallDistance >= maxHeight && controller.isGrounded)
         {
-            GameObject charPrinc = Instantiate(character, respawn.transform.position, respawn.transform.rotation);
+            lastPositionY = 0.0f;
+            fallDistance = 0.0f;
+            Destroy(this.gameObject);
+            GameObject charPrinc = Instantiate(character, respawn.gameObject.transform.localPosition, respawn.transform.localRotation);
         }
     }
 }
