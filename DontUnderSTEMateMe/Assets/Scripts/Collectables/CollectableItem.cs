@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CollectableItem : MonoBehaviour
 {
-    [SerializeField] protected int id;
+    [SerializeField] protected Image imageItem;
     [SerializeField] protected string descriptionCollectable;
     [SerializeField] protected string titleCollectable;
     [SerializeField] protected Sprite spriteCollectable;
@@ -27,21 +27,40 @@ public class CollectableItem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            descriptionCanvas.text = descriptionCollectable;
-            titleCanvas.text = titleCollectable;
-            collectableCanvas.enabled = true;
-            imageCanvas.sprite = spriteCollectable;
-            setListInfo(collectableList);
+            setCanvasInfo();
+            setListInfo();
             //añadir a informacion persistente
             Time.timeScale = 0;
             Destroy(this.gameObject);
         }
     }
 
-    private void setListInfo(Canvas collectableList)
+    private void setListInfo()
     {
-        Image imageItem = collectableList.GetComponentsInChildren<Image>()[id+2];
         imageItem.color = new Color(255, 255, 255);
         imageItem.GetComponentInChildren<TextMeshProUGUI>().text = titleCollectable;
+        imageItem.GetComponentInChildren<Text>().text = descriptionCollectable;
+
+        GameObject imageDescription = new GameObject("ImageDescription");
+        Image image = imageDescription.AddComponent<Image>();
+        image.color = new Color(0, 0, 0, 0);
+        image.sprite = spriteCollectable;
+        image.enabled = false;
+        image.transform.parent = imageItem.transform;
+
+        imageItem.GetComponent<Button>().enabled = true;
+    }
+
+    private void setCanvasInfo()
+    {
+        descriptionCanvas.text = descriptionCollectable;
+        titleCanvas.text = titleCollectable;
+        imageCanvas.sprite = spriteCollectable;
+        collectableCanvas.enabled = true;
+    }
+
+    private void setPersistentInfo()
+    {
+
     }
 }

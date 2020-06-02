@@ -24,9 +24,15 @@ public class CollectableCanvasScript : MonoBehaviour
         }
     }
 
-    private void disableCanvas()
+    public void disableCanvas()
     {
         collectableCanvas.enabled = false;
         Time.timeScale = 1f;
+    }
+
+    public void enableCanvas()
+    {
+        collectableCanvas.enabled = true;
+        Time.timeScale = 0f;
     }
 }

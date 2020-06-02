@@ -204,6 +204,18 @@ Transform:
   m_Father: {fileID: 2112846256}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &174122528 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6621291127080488748, guid: 1a51ecbb17d37f946b63a855e09d6499,
+    type: 3}
+  m_PrefabInstance: {fileID: 2609594342183019497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &271980827 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7109190921538965222, guid: b432c35f0c48a9d479a825e9368120d0,
@@ -248,6 +260,16 @@ PrefabInstance:
       propertyPath: collectableList
       value: 
       objectReference: {fileID: 2027380957}
+    - target: {fileID: 1273974595329449525, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
+        type: 3}
+      propertyPath: imageItem
+      value: 
+      objectReference: {fileID: 921492547}
+    - target: {fileID: 1273974595329449525, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
+        type: 3}
+      propertyPath: descriptionCollectable
+      value: Lorem ipsum 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3989965230796408114, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -592,6 +614,18 @@ MonoBehaviour:
   currentStateName: 
   currentTarget: {fileID: 0}
   movementSpeed: {x: 0, y: 0}
+--- !u!114 &921492547 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2609594341862085127, guid: 1a51ecbb17d37f946b63a855e09d6499,
+    type: 3}
+  m_PrefabInstance: {fileID: 2609594342183019497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955518519
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,6 +953,16 @@ PrefabInstance:
         type: 3}
       propertyPath: titleCollectable
       value: Titiulo 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1273974595329449525, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
+        type: 3}
+      propertyPath: imageItem
+      value: 
+      objectReference: {fileID: 174122528}
+    - target: {fileID: 1273974595329449525, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
+        type: 3}
+      propertyPath: descriptionCollectable
+      value: Lorem  2
       objectReference: {fileID: 0}
     - target: {fileID: 3989965230796408114, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
         type: 3}
@@ -1319,6 +1363,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10002824, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
+    - target: {fileID: 266892038, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
+    - target: {fileID: 269131978, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
+    - target: {fileID: 557322226, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
+    - target: {fileID: 1186868692, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
+    - target: {fileID: 1627873582, guid: 1a51ecbb17d37f946b63a855e09d6499, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 835742408}
     - target: {fileID: 2609594341238719283, guid: 1a51ecbb17d37f946b63a855e09d6499,
         type: 3}
       propertyPath: m_Name
