@@ -12418,7 +12418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 3028816270064214315, guid: 8dbde3b9a2e91c447b12fb59f449da87,
     type: 3}
-  maxHeight: 20
+  maxHeight: 15
 --- !u!64 &526333322
 MeshCollider:
   m_ObjectHideFlags: 0
