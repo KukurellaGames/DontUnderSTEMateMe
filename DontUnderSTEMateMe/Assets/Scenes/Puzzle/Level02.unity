@@ -15079,7 +15079,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 1511289967}
+      objectReference: {fileID: 2025332234}
     - target: {fileID: 7160770895108371926, guid: 94948bbb6fef2d440b0a80293ce70c7b,
         type: 3}
       propertyPath: displayText
@@ -48329,7 +48329,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 1511289967}
+      objectReference: {fileID: 2025332234}
     - target: {fileID: 7160770895108371926, guid: 94948bbb6fef2d440b0a80293ce70c7b,
         type: 3}
       propertyPath: displayText
@@ -55632,7 +55632,7 @@ PrefabInstance:
         type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 1511289967}
+      objectReference: {fileID: 2025332234}
     - target: {fileID: 7160770895108371926, guid: 94948bbb6fef2d440b0a80293ce70c7b,
         type: 3}
       propertyPath: displayText
@@ -56709,6 +56709,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DialogueText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970366764051405031, guid: a6fdac56f2be1054abebdc5780e0ad28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6fdac56f2be1054abebdc5780e0ad28, type: 3}
@@ -66629,12 +66634,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9f7afc848d957654993b456bbe0d8a48, type: 3}
---- !u!1 &1511289967 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8970366763545948485, guid: a6fdac56f2be1054abebdc5780e0ad28,
-    type: 3}
-  m_PrefabInstance: {fileID: 1284026581}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1511350794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89649,6 +89648,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 486510, guid: 3c6066f9c68d6e846968372f931bb81c,
     type: 3}
   m_PrefabInstance: {fileID: 2024392623}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2025332234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8970366764051405031, guid: a6fdac56f2be1054abebdc5780e0ad28,
+    type: 3}
+  m_PrefabInstance: {fileID: 1284026581}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2025341684
 PrefabInstance:
