@@ -20,13 +20,20 @@ public class CollectableCanvasScript : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 disableCanvas();
+                Debug.Log("hola");
             }
         }
     }
 
-    private void disableCanvas()
+    public void disableCanvas()
     {
         collectableCanvas.enabled = false;
         Time.timeScale = 1f;
+    }
+
+    public void enableCanvas()
+    {
+        collectableCanvas.enabled = true;
+        Time.timeScale = 0f;
     }
 }
