@@ -6,6 +6,7 @@ public class Pause : MonoBehaviour
 {
     private bool active;
     private Canvas canvas;
+    [SerializeField] Canvas collectables;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class Pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) 
+        if (Input.GetKeyDown(KeyCode.Escape) && !collectables.isActiveAndEnabled) 
         {
             Continue();
         }
