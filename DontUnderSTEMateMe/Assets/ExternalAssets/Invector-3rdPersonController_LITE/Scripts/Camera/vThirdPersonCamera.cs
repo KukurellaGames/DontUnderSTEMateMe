@@ -86,9 +86,15 @@ public class vThirdPersonCamera : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (target == null || targetLookAt == null) return;
+        //if (target == null || targetLookAt == null) return;
 
         CameraMovement();
+
+        if (target == null)
+        {
+            Debug.Log("hola2");
+            target = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 
     /// <summary>

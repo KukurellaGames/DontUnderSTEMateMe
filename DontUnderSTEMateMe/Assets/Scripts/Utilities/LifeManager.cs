@@ -6,7 +6,7 @@ using TMPro;
 
 public class LifeManager : MonoBehaviour
 {
-    private int lifes = 1;
+    private int lifes = 2;
     [SerializeField]
     private TextMeshProUGUI lifeUI;
     [SerializeField]
