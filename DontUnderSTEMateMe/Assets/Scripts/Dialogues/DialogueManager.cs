@@ -50,6 +50,8 @@ public class DialogueManager : MonoBehaviour
     {
         if(sentences.Count <= 0)
         {
+            dialoguePanel.SetActive(false);
+            Destroy(this.gameObject);
             displayText.text = activeSentence;
             return;
         }
