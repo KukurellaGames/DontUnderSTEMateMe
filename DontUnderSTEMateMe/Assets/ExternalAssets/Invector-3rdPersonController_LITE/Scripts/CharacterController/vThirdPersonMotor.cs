@@ -4,6 +4,10 @@ namespace Invector.vCharacterController
 {
     public class vThirdPersonMotor : MonoBehaviour
     {
+        protected AudioSource _audioSourc;
+        [SerializeField]
+        protected AudioClip _jump;
+
         #region Inspector Variables
 
         [Header("- Movement")]
@@ -142,6 +146,7 @@ namespace Invector.vCharacterController
             colliderRadius = GetComponent<CapsuleCollider>().radius;
             colliderHeight = GetComponent<CapsuleCollider>().height;
 
+            _audioSourc = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
             isGrounded = true;
         }
 
