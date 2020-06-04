@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip getDamage;
+    protected AudioSource _audioSourc;
     private LifeManager _lifeManager;
     private RespawnController _respawn;
     [SerializeField]
@@ -12,6 +15,7 @@ public class Damage : MonoBehaviour
 
     private void Start()
     {
+        _audioSourc = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
         _lifeManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<LifeManager>();
         _respawn = GameObject.FindGameObjectWithTag("GameController").GetComponent<RespawnController>();
     }
@@ -19,6 +23,7 @@ public class Damage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            _audioSourc.PlayOneShot(getDamage);
             Destroy(collision.gameObject);
             GameObject charPrinc= Instantiate(character, _respawn.getRespawn().gameObject.transform.localPosition, _respawn.getRespawn().transform.localRotation);
             _lifeManager.isDead();
