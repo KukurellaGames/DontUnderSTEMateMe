@@ -14,10 +14,12 @@ public class HandlerScript : MonoBehaviour
         spikesList[0].SpikesMovement();
     }
 
-    private void Update()
+    private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if(other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        {
             OnHandler();
+        }
     }
     public void HandlerDown()
     {
