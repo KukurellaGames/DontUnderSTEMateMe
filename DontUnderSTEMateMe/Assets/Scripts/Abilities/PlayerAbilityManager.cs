@@ -13,14 +13,14 @@ public class PlayerAbilityManager : MonoBehaviour
     private void Start()
     {
         initDictionary();
-/*
+
 #if UNITY_EDITOR
         ActiveAbility[AbilityTypes.RESILIENT] = true;
         ActiveAbility[AbilityTypes.UNLOCKING] = true;
         ActiveAbility[AbilityTypes.M_RAYS] = true;
 
 #endif
-*/
+
     }
 
     private void Update()
