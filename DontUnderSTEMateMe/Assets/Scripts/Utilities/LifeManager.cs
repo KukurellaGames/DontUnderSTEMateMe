@@ -6,10 +6,17 @@ using TMPro;
 
 public class LifeManager : MonoBehaviour
 {
+    const int initialLifes = 2;
     private int lifes = 2;
     [SerializeField]
     private TextMeshProUGUI lifeUI;
     private ChangeScene _chScene;
+
+    public void setInitialLifes()
+    {
+        lifes = initialLifes;
+        lifeUI.text = lifes.ToString();
+    }
 
     private void Start()
     {
