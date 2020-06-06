@@ -4,6 +4,7 @@ namespace Invector.vCharacterController
 {
     public class vThirdPersonController : vThirdPersonAnimator
     {
+
         public virtual void ControlAnimatorRootMotion()
         {
             if (!this.enabled) return;
@@ -118,6 +119,7 @@ namespace Invector.vCharacterController
             jumpCounter = jumpTimer;
             isJumping = true;
 
+            _audioSourc.PlayOneShot(_jump);
             // trigger jump animations
             if (input.sqrMagnitude < 0.1f)
                 animator.CrossFadeInFixedTime("Jump", 0.1f);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Damage : MonoBehaviour
 {
+    protected AudioSource _audioSourc;
     private LifeManager _lifeManager;
     private RespawnController _respawn;
     [SerializeField]
@@ -12,6 +13,7 @@ public class Damage : MonoBehaviour
 
     private void Start()
     {
+        _audioSourc = GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioSource>();
         _lifeManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<LifeManager>();
         _respawn = GameObject.FindGameObjectWithTag("GameController").GetComponent<RespawnController>();
     }

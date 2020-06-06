@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class PlayerAbilityManager : MonoBehaviour
 {
-    private Dictionary<AbilityTypes, bool> ActiveAbility;
-
+    //private Dictionary<AbilityTypes, bool> ActiveAbility;
+    private AbilityContainer _containerAbility;
     // Ability
     private bool canUseAbility = false;
     private GameObject abilityGameObject;
 
     private void Start()
     {
-        initDictionary();
+        //initDictionary();
+        _containerAbility = GameObject.FindGameObjectWithTag("GameController").GetComponent<AbilityContainer>(); 
     }
 
     private void Update()
     {
         if(Input.GetKey("e"))
         {
-            Interact();
-            Debug.Log("Click");
-        }
+            Interact();        }
     }
-
+    /*
     private void initDictionary()
     {
         ActiveAbility = new Dictionary<AbilityTypes, bool>();
@@ -33,7 +32,7 @@ public class PlayerAbilityManager : MonoBehaviour
         {
             ActiveAbility[value] = false;
         }
-    }
+    }*/
 
     /// <summary>
     /// Checks when the player is able to use an ability
@@ -82,7 +81,8 @@ public class PlayerAbilityManager : MonoBehaviour
         }
 
         // Check value in dictionary
-        return ActiveAbility[ability.abilityType];
+        return _containerAbility.ActiveAbility[ability.abilityType];
+        //return ActiveAbility[ability.abilityType];
 
     }
 
@@ -93,6 +93,7 @@ public class PlayerAbilityManager : MonoBehaviour
             Debug.LogError("[PlayerAbilityManager] This ability is set to NONE");
             return;
         }
-        ActiveAbility[type] = true;
+        //ActiveAbility[type] = true;
+        _containerAbility.ActiveAbility[type] = true;
     }
 }

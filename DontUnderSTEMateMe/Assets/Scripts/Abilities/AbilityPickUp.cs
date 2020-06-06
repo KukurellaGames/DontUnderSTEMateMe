@@ -19,7 +19,7 @@ public class AbilityPickUp : MonoBehaviour
     //Ability manager reference
     [Header("Ability Manager")]
     [Tooltip("This is the name of the game object that is containing the ability manager")]
-    [SerializeField] private string AbilityManagerName;
+    [SerializeField] private string AbilityManagerNameTag;
     [Tooltip("This is the name of the game object that is containing the ability UI")]
     [SerializeField] private string AbilityUIName;
 
@@ -51,7 +51,7 @@ public class AbilityPickUp : MonoBehaviour
 
     private void NotifyAbilityPicked()
     {
-        GameObject.Find(AbilityManagerName).SendMessage("AbilityPickedUp", abilityType);
+        GameObject.FindGameObjectWithTag(AbilityManagerNameTag).SendMessage("AbilityPickedUp", abilityType);
         GameObject.Find(AbilityUIName).SendMessage("AbilityPickedUp", abilityType);
     }
 }
