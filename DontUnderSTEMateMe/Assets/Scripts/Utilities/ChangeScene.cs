@@ -9,9 +9,16 @@ public class ChangeScene : MonoBehaviour
     [SerializeField]
     protected Scenes loadScene;
 
+
+
     public void onPointerClick()
     {
         LoadScene.Instance.loadScene(loadScene.ToString());
+    }
+
+    public void loadPreviousScene()
+    {
+        LoadScene.Instance.loadPreviousScene();
     }
 }
 

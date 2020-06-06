@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    
+    protected string previousScene = " ";
     public static LoadScene Instance { get; private set; }
 
     public Image loadImage;
@@ -37,7 +37,13 @@ public class LoadScene : MonoBehaviour
     
     public void loadScene(string nameScene)
     {
+        previousScene = SceneManager.GetActiveScene().name;
         StartCoroutine(ShowLoadScene(nameScene));
+    }
+
+    public void loadPreviousScene()
+    {
+        StartCoroutine(ShowLoadScene(previousScene));
     }
 
     private IEnumerator ShowLoadScene(string nameScene)
