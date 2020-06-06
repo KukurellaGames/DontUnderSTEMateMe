@@ -9,14 +9,12 @@ public class LifeManager : MonoBehaviour
     private int lifes = 2;
     [SerializeField]
     private TextMeshProUGUI lifeUI;
-    [SerializeField]
-    private GameObject mainUI;
-    [SerializeField]
-    private GameObject gameOverUI;
+    private ChangeScene _chScene;
 
     private void Start()
     {
         lifeUI.text = lifes.ToString();
+        _chScene = GetComponent<ChangeScene>();
     }
     public void IncrementLife()
     {
@@ -35,9 +33,8 @@ public class LifeManager : MonoBehaviour
         DecrementLife();
         if (lifes <= 0)
         {
-            Time.timeScale = 0f;
-            gameOverUI.SetActive(true);
-            mainUI.SetActive(false);
+            _chScene.onPointerClick();
+            //Time.timeScale = 0f;
             return true;
         }
         else

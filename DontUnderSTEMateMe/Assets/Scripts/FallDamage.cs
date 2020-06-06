@@ -36,28 +36,30 @@ public class FallDamage : MonoBehaviour
         {
             getInformation();
         }
-
-        if (lastPositionY > player.position.y && !controller.isGrounded)
-            fallDistance += lastPositionY - player.position.y;
-
-        lastPositionY = player.position.y;
-
-        if (fallDistance >= maxHeight && controller.isGrounded)
+        else
         {
-            lastPositionY = 0.0f;
-            fallDistance = 0.0f;
-            Destroy(controller.gameObject);
-            GameObject charPrinc = Instantiate(character, _respawn.getRespawn().gameObject.transform.localPosition, _respawn.getRespawn().transform.localRotation);
-            _lifeManager.isDead();
-        }
+            if (lastPositionY > player.position.y && !controller.isGrounded)
+                fallDistance += lastPositionY - player.position.y;
 
-        if (controller.isGrounded)
-            fallDistance = 0.0f;
+            lastPositionY = player.position.y;
+
+            if (fallDistance >= maxHeight && controller.isGrounded)
+            {
+                lastPositionY = 0.0f;
+                fallDistance = 0.0f;
+                Destroy(controller.gameObject);
+                GameObject charPrinc = Instantiate(character, _respawn.getRespawn().gameObject.transform.localPosition, _respawn.getRespawn().transform.localRotation);
+                _lifeManager.isDead();
+            }
+
+            if (controller.isGrounded)
+                fallDistance = 0.0f;
+        }
     }
 
     void getInformation()
     {
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<vThirdPersonController>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        controller = GameObject.FindGameObjectWithTag("Player")?.GetComponent<vThirdPersonController>();
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 }
