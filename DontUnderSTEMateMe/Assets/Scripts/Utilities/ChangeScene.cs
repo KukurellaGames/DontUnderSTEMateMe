@@ -8,10 +8,17 @@ public class ChangeScene : MonoBehaviour
 {
     [SerializeField]
     protected Scenes loadScene;
+    [SerializeField] protected Canvas collectableList;
 
     public void onPointerClick()
     {
         LoadScene.Instance.loadScene(loadScene.ToString());
+    }
+
+    public void showCollectableList()
+    {
+        GetComponentInParent<Canvas>().enabled = false;
+        collectableList.enabled = true;
     }
 }
 
