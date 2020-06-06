@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadScene : MonoBehaviour
 {
-    protected string previousScene = " ";
+    public string previousScene = " ";
     public static LoadScene Instance { get; private set; }
 
     public Image loadImage;
