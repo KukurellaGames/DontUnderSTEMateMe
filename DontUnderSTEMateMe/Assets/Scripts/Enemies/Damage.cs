@@ -26,6 +26,7 @@ public class Damage : MonoBehaviour
             fallDamage.enabled = false;
             Destroy(collision.gameObject);
             GameObject charPrinc = Instantiate(character, _respawn.getRespawn().gameObject.transform.localPosition, _respawn.getRespawn().transform.localRotation);
+            charPrinc.transform.SetParent(null);
             _lifeManager.isDead();
             fallDamage.lastPositionY = 0.0f;
             fallDamage.fallDistance = 0.0f;
