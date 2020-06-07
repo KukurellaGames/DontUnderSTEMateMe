@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class CollectableItem : MonoBehaviour
 {
+    [SerializeField] protected int _id;
+
     [SerializeField] protected Image imageItem;
     [SerializeField] protected string descriptionCollectable;
     [SerializeField] protected string titleCollectable;
@@ -17,6 +19,14 @@ public class CollectableItem : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI titleCanvas;
     [SerializeField] protected Image imageCanvas;
 
+    private CollectableContainer container;
+
+    private void Start()
+    {
+        container = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>();
+        if (container.getList().collectables[_id].pickup)
+            Destroy(this.gameObject);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -28,33 +38,17 @@ public class CollectableItem : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             setCanvasInfo();
-            setListInfo();
+            container.UnlockCollectable(_id);
             //añadir a informacion persistente
             Time.timeScale = 0;
             Destroy(this.gameObject);
         }
     }
 
-    private void setListInfo()
-    {
-        imageItem.color = new Color(255, 255, 255);
-        imageItem.GetComponentInChildren<TextMeshProUGUI>().text = titleCollectable;
-        imageItem.GetComponentInChildren<Text>().text = descriptionCollectable;
-
-        GameObject imageDescription = new GameObject("ImageDescription");
-        Image image = imageDescription.AddComponent<Image>();
-        image.color = new Color(0, 0, 0, 0);
-        image.sprite = spriteCollectable;
-        image.enabled = false;
-        image.transform.parent = imageItem.transform;
-
-        imageItem.GetComponent<Button>().enabled = true;
-    }
-
     private void setCanvasInfo()
     {
-        descriptionCanvas.text = descriptionCollectable;
-        titleCanvas.text = titleCollectable;
+        descriptionCanvas.text = container.getList().collectables[_id].description;
+        titleCanvas.text = container.getList().collectables[_id].title;
         imageCanvas.sprite = spriteCollectable;
         collectableCanvas.enabled = true;
     }
