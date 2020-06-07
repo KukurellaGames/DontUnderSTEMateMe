@@ -1481,6 +1481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   dialogue:
     dialogues:
     - "\xC9sta es la habilidad de resiliencia"
@@ -7310,6 +7311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   dialogue:
     dialogues:
     - "Esta es la habilidad de Electr\xF3lisis."
@@ -10237,9 +10239,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   dialogue:
     dialogues:
-    - "Bien, ha funcioado. Pero no podr\xE9 repetirlo m\xE1s veces. Mi control sobre
+    - "Bien, ha funcionado. Pero no podr\xE9 repetirlo m\xE1s veces. Mi control sobre
       este mundo es ... limitado."
     - "Sin embargo, tienes lo necesario para conseguir escapar tu misma... \xA1Con
       algo de trabajo!"
@@ -21134,6 +21137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: basic_plane
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0eb0bec625a2f6740bcd3b665e098dcf, type: 3}
+      propertyPath: m_TagString
+      value: Lava
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0eb0bec625a2f6740bcd3b665e098dcf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -23621,6 +23628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   dialogue:
     dialogues: []
   dialoguePanel: {fileID: 1931931785}
@@ -27018,6 +27026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   dialogue:
     dialogues:
     - "\xBFNo conoces a mis s\xFAbditos los Ximons? Espero que hag\xE1is buenas migas..."
@@ -35914,6 +35923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   dialogue:
     dialogues:
     - "\xBFC\xD3MO DEMONIOS HAS ESCAPADO? Este mundo me pertenece, no pienso dejar
@@ -36590,6 +36600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   dialogue:
     dialogues:
     - "Estos corazones te ayudar\xE1n en esta aventura. Si sufres da\xF1o, con ellos
@@ -39251,6 +39262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   dialogue:
     dialogues:
     - "\xBFTe crees que est\xE1s a salvo? \xA1Todav\xEDa quedan m\xE1s Ximons!"
@@ -43963,6 +43975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 1
   dialogue:
     dialogues:
     - "\xBFDe verdad cre\xEDas que iba a permitir que escapases as\xED como as\xED?
@@ -45478,6 +45491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 455f2cf69ad34ad42bfc7a6c67dffec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   dialogue:
     dialogues:
     - "\xA1Bien! Has conseguido volver, \xA1e incluso con m\xE1s poder!"
