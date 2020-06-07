@@ -1,10 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+
+
+public enum DialogueType
+{
+    Friendly,
+    UnFriendly,
+    OwnThinking
+}
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField]
+    protected DialogueType type;
+
     [SerializeField]
     protected Dialogue dialogue;
 
@@ -81,6 +93,7 @@ public class DialogueManager : MonoBehaviour
         {
             isInConversation = true;
             dialoguePanel.SetActive(true);
+            SetDialogColor();
             StartDialogue();
         }
     }
@@ -104,5 +117,26 @@ public class DialogueManager : MonoBehaviour
                 DisplayNextSentence();
             }
         }
+    }
+
+    private void SetDialogColor()
+    {
+        Color color = new Color(0,0,0,160.0f/255.0f); // Default color
+
+        switch (type)
+        {
+            case DialogueType.Friendly:
+                color = new Color(0.0f, 60.0f / 255.0f, 0, 160.0f / 255.0f); // Greenish
+                break;
+            case DialogueType.UnFriendly:
+                color = new Color(60.0f/255.0f, 0, 0, 160.0f/255.0f); // Redish
+                break;
+            case DialogueType.OwnThinking:
+                color = new Color(60.0f / 255.0f, 60.0f / 255.0f, 0, 160.0f / 255.0f); // Yellowish
+                break;
+        }
+
+        dialoguePanel.GetComponent<Image>().color = color;
+        
     }
 }
