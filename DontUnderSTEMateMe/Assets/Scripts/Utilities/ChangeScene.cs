@@ -10,9 +10,16 @@ public class ChangeScene : MonoBehaviour
     protected Scenes loadScene;
     [SerializeField] protected Canvas collectableList;
 
+
+
     public void onPointerClick()
     {
         LoadScene.Instance.loadScene(loadScene.ToString());
+    }
+
+    public void loadPreviousScene()
+    {
+        LoadScene.Instance.loadPreviousScene();
     }
 
     public void showCollectableList()

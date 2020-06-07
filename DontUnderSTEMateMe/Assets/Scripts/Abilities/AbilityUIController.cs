@@ -12,7 +12,12 @@ public class AbilityUIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Dictionary<AbilityTypes, bool> activeAbilities = GameObject.FindGameObjectWithTag("GameController").GetComponent<AbilityContainer>().ActiveAbility;
+        foreach (KeyValuePair<AbilityTypes,bool> value in activeAbilities)
+        {
+            if (value.Value)
+                AbilityPickedUp(value.Key);
+        }
     }
 
     public void AbilityPickedUp(AbilityTypes type)
