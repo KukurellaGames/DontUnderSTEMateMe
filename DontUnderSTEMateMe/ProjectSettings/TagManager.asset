@@ -7,6 +7,7 @@ TagManager:
   - Ability
   - Collectable
   - AudioSource
+  - Lava
   layers:
   - Default
   - TransparentFX
