@@ -23601,7 +23601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &965760053
 Transform:
   m_ObjectHideFlags: 0
@@ -37257,6 +37257,7 @@ MonoBehaviour:
   cc: {fileID: 0}
   tpCamera: {fileID: 0}
   cameraMain: {fileID: 0}
+  isInDialog: 0
 --- !u!114 &1562683071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51799,7 +51800,12 @@ PrefabInstance:
     - target: {fileID: 8970366764051405028, guid: a6fdac56f2be1054abebdc5780e0ad28,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 39.19995
+      value: 39.199707
+      objectReference: {fileID: 0}
+    - target: {fileID: 8970366764051405031, guid: a6fdac56f2be1054abebdc5780e0ad28,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6fdac56f2be1054abebdc5780e0ad28, type: 3}

@@ -21,6 +21,8 @@ namespace Invector.vCharacterController
         [HideInInspector] public vThirdPersonCamera tpCamera;
         [HideInInspector] public Camera cameraMain;
 
+        [HideInInspector] public bool isInDialog = false;
+
         #endregion
 
         protected virtual void Start()
@@ -38,8 +40,11 @@ namespace Invector.vCharacterController
 
         protected virtual void Update()
         {
-            InputHandle();                  // update the input methods
-            cc.UpdateAnimator();            // updates the Animator Parameters
+            //if (!isInDialog)
+            //{
+                InputHandle();                  // update the input methods
+                cc.UpdateAnimator();            // updates the Animator Parameters
+            //}
         }
 
         public virtual void OnAnimatorMove()
@@ -83,8 +88,17 @@ namespace Invector.vCharacterController
 
         public virtual void MoveInput()
         {
-            cc.input.x = Input.GetAxis(horizontalInput);
-            cc.input.z = Input.GetAxis(verticallInput);
+            if (!isInDialog)
+            {
+                cc.input.x = Input.GetAxis(horizontalInput);
+                cc.input.z = Input.GetAxis(verticallInput);
+            }
+            else
+            {
+                cc.input.x = 0.0f;
+                cc.input.z = 0.0f;
+            }
+            
         }
 
         protected virtual void CameraInput()
