@@ -8,6 +8,7 @@ public class CollectableCanvasScript : MonoBehaviour
 {
     [SerializeField] Canvas collectableCanvas;
     [SerializeField] Button exitButton;
+    [SerializeField] Canvas collectableList;
     private void Start()
     {
         exitButton.onClick.AddListener(disableCanvas);
@@ -20,7 +21,6 @@ public class CollectableCanvasScript : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Escape))
             {
                 disableCanvas();
-                Debug.Log("hola");
             }
         }
     }
@@ -28,7 +28,8 @@ public class CollectableCanvasScript : MonoBehaviour
     public void disableCanvas()
     {
         collectableCanvas.enabled = false;
-        Time.timeScale = 1f;
+        if(!collectableList.isActiveAndEnabled)
+            Time.timeScale = 1f;
     }
 
     public void enableCanvas()
