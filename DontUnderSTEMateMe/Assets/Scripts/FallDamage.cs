@@ -5,8 +5,8 @@ using Invector.vCharacterController;
 
 public class FallDamage : MonoBehaviour
 {
-    protected float lastPositionY = 0.0f;
-    protected float fallDistance = 0.0f;
+    public float lastPositionY = 0.0f;
+    public float fallDistance = 0.0f;
 
     protected vThirdPersonController controller;
     protected Transform player;
