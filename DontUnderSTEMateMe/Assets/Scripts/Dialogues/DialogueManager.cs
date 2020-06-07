@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Invector.vCharacterController;
 
 
 public enum DialogueType
@@ -40,10 +41,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     protected AudioClip speakSound;
 
+   // private Image enterImage;
+
+    private vThirdPersonInput playerInput;
+
     void Start()
     {
         sentences = new Queue<string>();
         myAudio = GetComponent<AudioSource>();
+        //enterImage = enterImage.transform.GetChild(1).GetComponent<Image>();
     }
 
     void StartDialogue()
@@ -60,13 +66,22 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayNextSentence()
     {
+        
+
         if(sentences.Count <= 0)
         {
+            playerInput.isInDialog = false;
+            /** Was on exit **/
+            isInConversation = false;
+            StopAllCoroutines();
+            /*****************/
             dialoguePanel.SetActive(false);
             Destroy(this.gameObject);
             displayText.text = activeSentence;
             return;
         }
+
+        dialoguePanel.transform.GetChild(1).GetComponent<Image>().enabled = false;
 
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
@@ -86,11 +101,15 @@ public class DialogueManager : MonoBehaviour
             //myAudio.PlayOneShot(speakSound);
             yield return new WaitForSeconds(typingSpeed);
         }
+        // TODO: Mostrar enter
+        dialoguePanel.transform.GetChild(1).GetComponent<Image>().enabled = true;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            playerInput = other.GetComponent<vThirdPersonInput>();
+            playerInput.isInDialog = true;
             isInConversation = true;
             dialoguePanel.SetActive(true);
             SetDialogColor();
