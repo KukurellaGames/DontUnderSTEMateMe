@@ -6,17 +6,27 @@ using UnityEngine.UI;
 
 public class CollectableItem : MonoBehaviour
 {
-    [SerializeField] protected Image imageItem;
-    [SerializeField] protected string descriptionCollectable;
-    [SerializeField] protected string titleCollectable;
+    [SerializeField] protected int _id;
     [SerializeField] protected Sprite spriteCollectable;
 
-    [SerializeField] protected Canvas collectableList;
-    [SerializeField] protected Canvas collectableCanvas;
-    [SerializeField] protected TextMeshProUGUI descriptionCanvas;
-    [SerializeField] protected TextMeshProUGUI titleCanvas;
-    [SerializeField] protected Image imageCanvas;
+    protected Canvas collectableCanvas;
+    protected TextMeshProUGUI descriptionCanvas;
+    protected TextMeshProUGUI titleCanvas;
+    protected Image imageCanvas;
 
+    private CollectableContainer container;
+
+    private void Start()
+    {
+        collectableCanvas = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
+        descriptionCanvas = collectableCanvas.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        titleCanvas = collectableCanvas.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
+        imageCanvas = collectableCanvas.transform.GetChild(3).GetComponent<Image>();
+
+        container = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>();
+        if (container.getList().collectables[_id].pickup)
+            Destroy(this.gameObject);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -27,40 +37,18 @@ public class CollectableItem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            setCanvasInfo();
-            setListInfo();
-            //añadir a informacion persistente
+            SetCanvasInfo();
+            container.UnlockCollectable(_id);
             Time.timeScale = 0;
             Destroy(this.gameObject);
         }
     }
 
-    private void setListInfo()
+    private void SetCanvasInfo()
     {
-        imageItem.color = new Color(255, 255, 255);
-        imageItem.GetComponentInChildren<TextMeshProUGUI>().text = titleCollectable;
-        imageItem.GetComponentInChildren<Text>().text = descriptionCollectable;
-
-        GameObject imageDescription = new GameObject("ImageDescription");
-        Image image = imageDescription.AddComponent<Image>();
-        image.color = new Color(0, 0, 0, 0);
-        image.sprite = spriteCollectable;
-        image.enabled = false;
-        image.transform.parent = imageItem.transform;
-
-        imageItem.GetComponent<Button>().enabled = true;
-    }
-
-    private void setCanvasInfo()
-    {
-        descriptionCanvas.text = descriptionCollectable;
-        titleCanvas.text = titleCollectable;
+        descriptionCanvas.text = container.getList().collectables[_id].description;
+        titleCanvas.text = container.getList().collectables[_id].title;
         imageCanvas.sprite = spriteCollectable;
         collectableCanvas.enabled = true;
-    }
-
-    private void setPersistentInfo()
-    {
-
     }
 }

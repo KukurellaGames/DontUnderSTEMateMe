@@ -6,9 +6,12 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] Animator[] animators;
 
+    
+
     public void OnPlayPressed()
     {
-        foreach(Animator animator in animators)
+        CheckDontDestroyAnimator();
+        foreach (Animator animator in animators)
         {
             animator.SetTrigger("PlayPressed");
         }
@@ -16,6 +19,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnMainMenu()
     {
+        CheckDontDestroyAnimator();
         foreach (Animator animator in animators)
         {
             animator.SetTrigger("MainMenu");
@@ -24,10 +28,18 @@ public class MainMenuManager : MonoBehaviour
 
     public void OnCollectableShow()
     {
+        CheckDontDestroyAnimator();
         foreach (Animator animator in animators)
         {
             animator.SetTrigger("ShowCollectableList");
         }
     }
 
+
+    private void CheckDontDestroyAnimator()
+    {
+        // Sory :'(
+        if (animators[3] == null)
+            animators[3] = GameObject.FindGameObjectWithTag("CollectableList").GetComponent<Animator>();
+    }
 }

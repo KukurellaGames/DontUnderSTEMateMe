@@ -8,6 +8,9 @@ TagManager:
   - Collectable
   - AudioSource
   - Lava
+  - CollectableUI
+  - CollectableContainer
+  - CollectableList
   layers:
   - Default
   - TransparentFX

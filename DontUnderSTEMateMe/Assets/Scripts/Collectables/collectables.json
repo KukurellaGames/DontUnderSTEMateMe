@@ -1,0 +1,52 @@
+{
+    "collectables": [
+        {
+            "title": "1",
+            "description": "lalala-1",
+            "image": "image1.png",
+            "pickup": false
+        },
+        {
+            "title": "2",
+            "description": "lalala-2",
+            "image": "image2.png",
+            "pickup": false
+        },
+        {
+            "title": "3",
+            "description": "lalala-3",
+            "image": "image3.png",
+            "pickup": true
+        },
+        {
+            "title": "4",
+            "description": "lalala-4",
+            "image": "image4.png",
+            "pickup": false
+        },
+        {
+            "title": "5",
+            "description": "lalala-5",
+            "image": "image5.png",
+            "pickup": false
+        },
+        {
+            "title": "6",
+            "description": "lalala-6",
+            "image": "image6.png",
+            "pickup": false
+        },
+        {
+            "title": "7",
+            "description": "lalala-7",
+            "image": "image7.png",
+            "pickup": false
+        },
+        {
+            "title": "8",
+            "description": "lalala-8",
+            "image": "image8.png",
+            "pickup": false
+        }
+    ]
+}
