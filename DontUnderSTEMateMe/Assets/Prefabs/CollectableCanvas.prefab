@@ -616,6 +616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectableCanvas: {fileID: 7109190922584777882}
   exitButton: {fileID: 7109190921287238183}
+  collectableList: {fileID: 0}
 --- !u!1 &7109190923056537005
 GameObject:
   m_ObjectHideFlags: 0

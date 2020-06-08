@@ -45,7 +45,7 @@ public class CollectableContainer : MonoBehaviour
     {
         GameObject[] uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
 
-        for(int i= 0; i < uiCollectables.Length; i++)
+        for(int i = 0; i < uiCollectables.Length; i++)
         {
             uiCollectables[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _list.collectables[i].title;
             uiCollectables[i].transform.GetChild(1).GetComponent<Text>().text = _list.collectables[i].description;
@@ -70,14 +70,8 @@ public class CollectableContainer : MonoBehaviour
     public void WriteRecord()
     {
         //checkRecord(_name, _record);
-        string dataToJson = JsonUtility.ToJson(_list);
+        string dataToJson = JsonUtility.ToJson(_list, true);
         File.WriteAllText(_path, dataToJson);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public CollectableListInfo getList()
@@ -92,6 +86,13 @@ public class CollectableContainer : MonoBehaviour
         WriteRecord();
     }
 
+    public void DisabledCollectableList()
+    {
+        Debug.Log("hagoaoao");
+        this.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
+        //this.gameObject.GetComponent<Canvas>().enabled = false;
+    }
+
 #if UNITY_EDITOR
     public void setFalseAll()
     {
@@ -102,7 +103,7 @@ public class CollectableContainer : MonoBehaviour
             falselist.collectables[i].description = _list.collectables[i].description;
             falselist.collectables[i].pickup = false;
         }
-        string dataToJson = JsonUtility.ToJson(falselist);
+        string dataToJson = JsonUtility.ToJson(falselist, true);
         File.WriteAllText("Scripts/Collectables/collectables_false.json", dataToJson);
     }
 #endif

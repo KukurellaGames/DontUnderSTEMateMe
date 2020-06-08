@@ -27,19 +27,19 @@ public class Pause : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape) && !collectables.isActiveAndEnabled && collectablesList.isActiveAndEnabled)
         {
-            disabledCollectableList();
+            DisabledCollectableList();
         }
     }
 
-    public void showCollectableList()
+    public void ShowCollectableList()
     {
-        this.gameObject.GetComponent<Canvas>().enabled = false;
         collectablesList.enabled = true;
+        //this.gameObject.GetComponent<Canvas>().enabled = false;
     }
-     public void disabledCollectableList()
+     public void DisabledCollectableList()
      {
-        GetComponentInParent<Canvas>().enabled = true;
         collectablesList.enabled = false;
+        //this.gameObject.GetComponent<Canvas>().enabled = true;
      }
 
     public void Continue()

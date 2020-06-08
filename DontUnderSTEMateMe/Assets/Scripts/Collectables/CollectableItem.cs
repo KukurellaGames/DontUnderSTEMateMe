@@ -7,22 +7,21 @@ using UnityEngine.UI;
 public class CollectableItem : MonoBehaviour
 {
     [SerializeField] protected int _id;
-
-    [SerializeField] protected Image imageItem;
-    [SerializeField] protected string descriptionCollectable;
-    [SerializeField] protected string titleCollectable;
     [SerializeField] protected Sprite spriteCollectable;
 
-    [SerializeField] protected Canvas collectableList;
     [SerializeField] protected Canvas collectableCanvas;
-    [SerializeField] protected TextMeshProUGUI descriptionCanvas;
-    [SerializeField] protected TextMeshProUGUI titleCanvas;
-    [SerializeField] protected Image imageCanvas;
+    protected TextMeshProUGUI descriptionCanvas;
+    protected TextMeshProUGUI titleCanvas;
+    protected Image imageCanvas;
 
     private CollectableContainer container;
 
     private void Start()
     {
+        descriptionCanvas = collectableCanvas.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
+        titleCanvas = collectableCanvas.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
+        imageCanvas = collectableCanvas.transform.GetChild(3).GetComponent<Image>();
+
         container = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>();
         if (container.getList().collectables[_id].pickup)
             Destroy(this.gameObject);
@@ -37,24 +36,18 @@ public class CollectableItem : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            setCanvasInfo();
+            SetCanvasInfo();
             container.UnlockCollectable(_id);
-            //añadir a informacion persistente
             Time.timeScale = 0;
             Destroy(this.gameObject);
         }
     }
 
-    private void setCanvasInfo()
+    private void SetCanvasInfo()
     {
         descriptionCanvas.text = container.getList().collectables[_id].description;
         titleCanvas.text = container.getList().collectables[_id].title;
         imageCanvas.sprite = spriteCollectable;
         collectableCanvas.enabled = true;
-    }
-
-    private void setPersistentInfo()
-    {
-
     }
 }
