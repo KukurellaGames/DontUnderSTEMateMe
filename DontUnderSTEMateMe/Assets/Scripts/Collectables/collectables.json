@@ -10,7 +10,7 @@
             "title": "2",
             "description": "lalala-2",
             "image": "image2.png",
-            "pickup": true
+            "pickup": false
         },
         {
             "title": "3",
@@ -22,7 +22,7 @@
             "title": "4",
             "description": "lalala-4",
             "image": "image4.png",
-            "pickup": true
+            "pickup": false
         },
         {
             "title": "5",

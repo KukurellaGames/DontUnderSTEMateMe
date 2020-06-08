@@ -6,12 +6,13 @@ public class Pause : MonoBehaviour
 {
     private bool active;
     private Canvas canvas;
-    [SerializeField] Canvas collectables;
+    private Canvas collectables;
     private Canvas collectablesList;
 
     // Start is called before the first frame update
     void Start()
     {
+        collectables = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
         collectablesList = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(0).GetComponent<Canvas>();

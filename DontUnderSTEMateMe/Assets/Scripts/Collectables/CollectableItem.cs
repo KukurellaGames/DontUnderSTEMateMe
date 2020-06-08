@@ -9,7 +9,7 @@ public class CollectableItem : MonoBehaviour
     [SerializeField] protected int _id;
     [SerializeField] protected Sprite spriteCollectable;
 
-    [SerializeField] protected Canvas collectableCanvas;
+    protected Canvas collectableCanvas;
     protected TextMeshProUGUI descriptionCanvas;
     protected TextMeshProUGUI titleCanvas;
     protected Image imageCanvas;
@@ -18,6 +18,7 @@ public class CollectableItem : MonoBehaviour
 
     private void Start()
     {
+        collectableCanvas = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
         descriptionCanvas = collectableCanvas.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
         titleCanvas = collectableCanvas.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
         imageCanvas = collectableCanvas.transform.GetChild(3).GetComponent<Image>();
