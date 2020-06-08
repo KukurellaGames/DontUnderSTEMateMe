@@ -29,7 +29,8 @@ public class CollectableCanvasScript : MonoBehaviour
     public void disableCanvas()
     {
         collectableCanvas.enabled = false;
-        if(!collectableList.isActiveAndEnabled && mustPauseGame)
+        //if(mustPauseGame)
+        //if(!collectableList.isActiveAndEnabled && mustPauseGame)
             Time.timeScale = 1f;
     }
 

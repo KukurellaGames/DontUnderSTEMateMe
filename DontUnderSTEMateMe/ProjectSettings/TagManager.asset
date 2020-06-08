@@ -10,6 +10,7 @@ TagManager:
   - Lava
   - CollectableUI
   - CollectableContainer
+  - CollectableList
   layers:
   - Default
   - TransparentFX
