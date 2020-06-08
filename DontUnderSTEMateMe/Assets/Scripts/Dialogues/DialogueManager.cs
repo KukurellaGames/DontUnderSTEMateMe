@@ -61,6 +61,13 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        //Aqui iria sonido
+        if (myAudio)
+        {
+            myAudio.clip = speakSound;
+            myAudio.Play();
+        }
+
         DisplayNextSentence();
     }
 
@@ -98,8 +105,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
-            //Aqui iria sonido
-            //myAudio.PlayOneShot(speakSound);
+            
             yield return new WaitForSeconds(typingSpeed);
         }
         // TODO: Mostrar enter

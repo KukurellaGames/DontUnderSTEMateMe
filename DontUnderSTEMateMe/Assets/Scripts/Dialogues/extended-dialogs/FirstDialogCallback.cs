@@ -6,6 +6,7 @@ public class FirstDialogCallback : MonoBehaviour
 {
     public void FirstDialogCallbackExec()
     {
+        GetComponent<AudioSource>().Play();
         GetComponent<Animator>().SetTrigger("Open");
     }
 }
