@@ -44,7 +44,7 @@ public class CollectableContainer : MonoBehaviour
     private void writeCollectables()
     {
         GameObject[] uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
-
+        Debug.Log("Cracckkkkk" + uiCollectables.Length);
         for(int i = 0; i < uiCollectables.Length; i++)
         {
             uiCollectables[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _list.collectables[i].title;

@@ -9,6 +9,7 @@ public class CollectableCanvasScript : MonoBehaviour
     [SerializeField] Canvas collectableCanvas;
     [SerializeField] Button exitButton;
     [SerializeField] Canvas collectableList;
+    [HideInInspector] public bool mustPauseGame = false;
     private void Start()
     {
         exitButton.onClick.AddListener(disableCanvas);
@@ -28,13 +29,14 @@ public class CollectableCanvasScript : MonoBehaviour
     public void disableCanvas()
     {
         collectableCanvas.enabled = false;
-        if(!collectableList.isActiveAndEnabled)
+        if(!collectableList.isActiveAndEnabled && mustPauseGame)
             Time.timeScale = 1f;
     }
 
     public void enableCanvas()
     {
         collectableCanvas.enabled = true;
-        Time.timeScale = 0f;
+        if(mustPauseGame)
+            Time.timeScale = 0f;
     }
 }
