@@ -49,6 +49,7 @@ public class LoadScene : MonoBehaviour
     private IEnumerator ShowLoadScene(string nameScene)
     {
         // i'm so so so so sorry for this piece of code :(
+        /*
         CollectableCanvasScript sp = GameObject.Find("CollectableCanvas")?.GetComponent<CollectableCanvasScript>();
         if (nameScene == "MainScreen")
         {

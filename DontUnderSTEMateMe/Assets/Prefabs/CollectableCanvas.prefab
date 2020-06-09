@@ -509,7 +509,6 @@ GameObject:
   - component: {fileID: 7109190922584777882}
   - component: {fileID: 7109190922584777881}
   - component: {fileID: 7109190922584777880}
-  - component: {fileID: 7109190922584777883}
   m_Layer: 0
   m_Name: CollectableCanvas
   m_TagString: Untagged
@@ -602,21 +601,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7109190922584777883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7109190922584777862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48eec65b876e8474dba58311522eacdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collectableCanvas: {fileID: 7109190922584777882}
-  exitButton: {fileID: 7109190921287238183}
-  collectableList: {fileID: 0}
 --- !u!1 &7109190923056537005
 GameObject:
   m_ObjectHideFlags: 0

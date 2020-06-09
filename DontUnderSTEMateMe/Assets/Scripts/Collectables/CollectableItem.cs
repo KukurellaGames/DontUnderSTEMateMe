@@ -8,24 +8,22 @@ public class CollectableItem : MonoBehaviour
 {
     [SerializeField] protected int _id;
     [SerializeField] protected Sprite spriteCollectable;
+    [SerializeField] protected TextMeshProUGUI descriptionCanvas;
+    [SerializeField] protected TextMeshProUGUI titleCanvas;
+    [SerializeField] protected Image imageCanvas;
 
-    protected Canvas collectableCanvas;
-    protected TextMeshProUGUI descriptionCanvas;
-    protected TextMeshProUGUI titleCanvas;
-    protected Image imageCanvas;
+    protected GameObject uiCollectables;
+    
 
     private CollectableContainer container;
 
     private void Start()
     {
-        collectableCanvas = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
-        descriptionCanvas = collectableCanvas.transform.GetChild(2).GetComponent<TextMeshProUGUI>();
-        titleCanvas = collectableCanvas.transform.GetChild(5).GetComponent<TextMeshProUGUI>();
-        imageCanvas = collectableCanvas.transform.GetChild(3).GetComponent<Image>();
-
         container = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>();
         if (container.getList().collectables[_id].pickup)
             Destroy(this.gameObject);
+
+        uiCollectables = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>().GetUiCollectables()[_id];
     }
     // Update is called once per frame
     void Update()
@@ -46,9 +44,8 @@ public class CollectableItem : MonoBehaviour
 
     private void SetCanvasInfo()
     {
-        descriptionCanvas.text = container.getList().collectables[_id].description;
-        titleCanvas.text = container.getList().collectables[_id].title;
-        imageCanvas.sprite = spriteCollectable;
-        collectableCanvas.enabled = true;
+        descriptionCanvas.text = uiCollectables.transform.GetChild(1).GetComponent<Text>().text;
+        titleCanvas.text = uiCollectables.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
+        imageCanvas.sprite = uiCollectables.GetComponent<Image>().sprite;
     }
 }

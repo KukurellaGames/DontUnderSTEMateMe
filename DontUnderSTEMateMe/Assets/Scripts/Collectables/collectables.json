@@ -16,7 +16,7 @@
             "title": "3",
             "description": "lalala-3",
             "image": "image3.png",
-            "pickup": true
+            "pickup": false
         },
         {
             "title": "4",
