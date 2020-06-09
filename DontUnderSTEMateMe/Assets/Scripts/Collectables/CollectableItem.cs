@@ -48,8 +48,9 @@ public class CollectableItem : MonoBehaviour
     {
         descriptionCanvas.text = uiCollectables.description;
         titleCanvas.text = uiCollectables.title;
+        imageCanvas.sprite = spriteCollectable;
         pause.GetComponent<Pause>().Continue();
         pause.GetComponent<Pause>().ShowCollectableList();
-        //imageCanvas.sprite;
+        GameObject.FindGameObjectWithTag("CollectableExpanded").GetComponent<Canvas>().enabled = true;
     }
 }

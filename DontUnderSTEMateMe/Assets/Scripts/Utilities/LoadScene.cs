@@ -72,12 +72,7 @@ public class LoadScene : MonoBehaviour
         }
 
         //CollectableLoad
-        GameObject sp = GameObject.FindGameObjectWithTag("CollectableList");
-        if (String.Compare(nameScene, "Level01") == 0 || String.Compare(nameScene, "Level02") == 0)
-        {
-            if (sp)
-                GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>().writeCollectables();
-        }
+        GameObject.FindGameObjectWithTag("CollectableContainer")?.GetComponent<CollectableContainer>()?.writeCollectables();
 
         //When scene is loaded, the load image disappears
         while (c.a > 0)
