@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class LoadScene : MonoBehaviour
 {
@@ -48,22 +49,6 @@ public class LoadScene : MonoBehaviour
 
     private IEnumerator ShowLoadScene(string nameScene)
     {
-        // i'm so so so so sorry for this piece of code :(
-        /*
-        CollectableCanvasScript sp = GameObject.Find("CollectableCanvas")?.GetComponent<CollectableCanvasScript>();
-        if (nameScene == "MainScreen")
-        {
-            if (sp)
-                sp.mustPauseGame = true;
-        }
-        else
-        {
-            if (sp)
-                sp.mustPauseGame = false;
-        }
-        /**********************************/
-
-
         loadImage.gameObject.SetActive(true);
         Color c = loadImage.color;
 
@@ -84,6 +69,14 @@ public class LoadScene : MonoBehaviour
         while (!nameScene.Equals(SceneManager.GetActiveScene().name))
         {
             yield return null;
+        }
+
+        //CollectableLoad
+        GameObject sp = GameObject.FindGameObjectWithTag("CollectableList");
+        if (String.Compare(nameScene, "Level01") == 0 || String.Compare(nameScene, "Level02") == 0)
+        {
+            if (sp)
+                GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>().writeCollectables();
         }
 
         //When scene is loaded, the load image disappears

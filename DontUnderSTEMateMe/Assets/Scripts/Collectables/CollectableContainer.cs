@@ -47,7 +47,7 @@ public class CollectableContainer : MonoBehaviour
 
     }
 
-    private void writeCollectables()
+    public void writeCollectables()
     {
         uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
         for (int i = 0; i < uiCollectables.Length; i++)

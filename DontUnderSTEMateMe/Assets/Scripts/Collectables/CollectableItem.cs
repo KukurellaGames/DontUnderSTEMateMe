@@ -11,8 +11,9 @@ public class CollectableItem : MonoBehaviour
     [SerializeField] protected TextMeshProUGUI descriptionCanvas;
     [SerializeField] protected TextMeshProUGUI titleCanvas;
     [SerializeField] protected Image imageCanvas;
+    [SerializeField] protected GameObject pause;
 
-    protected GameObject uiCollectables;
+    protected Collectable uiCollectables;
     
 
     private CollectableContainer container;
@@ -21,9 +22,11 @@ public class CollectableItem : MonoBehaviour
     {
         container = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>();
         if (container.getList().collectables[_id].pickup)
+        {
             Destroy(this.gameObject);
-
-        uiCollectables = GameObject.FindGameObjectWithTag("CollectableContainer").GetComponent<CollectableContainer>().GetUiCollectables()[_id];
+            return;
+        }
+        uiCollectables = container.GetComponent<CollectableContainer>().getList().collectables[_id];
     }
     // Update is called once per frame
     void Update()
@@ -37,15 +40,16 @@ public class CollectableItem : MonoBehaviour
         {
             SetCanvasInfo();
             container.UnlockCollectable(_id);
-            Time.timeScale = 0;
             Destroy(this.gameObject);
         }
     }
 
     private void SetCanvasInfo()
     {
-        descriptionCanvas.text = uiCollectables.transform.GetChild(1).GetComponent<Text>().text;
-        titleCanvas.text = uiCollectables.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text;
-        imageCanvas.sprite = uiCollectables.GetComponent<Image>().sprite;
+        descriptionCanvas.text = uiCollectables.description;
+        titleCanvas.text = uiCollectables.title;
+        pause.GetComponent<Pause>().Continue();
+        pause.GetComponent<Pause>().ShowCollectableList();
+        //imageCanvas.sprite;
     }
 }
