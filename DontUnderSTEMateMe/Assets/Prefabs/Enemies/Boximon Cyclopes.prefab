@@ -1274,9 +1274,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.4
-  m_Height: 1.69
+  m_Height: 1.493394
   m_Direction: 1
-  m_Center: {x: 0, y: 0.58, z: 0}
+  m_Center: {x: 0, y: 0.48169702, z: 0}
 --- !u!65 &3714994646291816530
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1302,7 +1302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67b1481660d27146a1e9cb6c5081466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawn: {fileID: 0}
   character: {fileID: 3028816270064214315, guid: 8dbde3b9a2e91c447b12fb59f449da87,
     type: 3}
 --- !u!1 &3715002016731229641
