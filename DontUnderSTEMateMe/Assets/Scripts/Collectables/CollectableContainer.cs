@@ -11,21 +11,11 @@ public class CollectableContainer : MonoBehaviour
     private string _path;
     private CollectableListInfo _list;
     private static CollectableContainer _instance;
-    
+    private GameObject[] uiCollectables;
+
+
     void Awake()
     {
-        //Singleton
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-            return;
-        }
-        else
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-
         _path = Path.Combine(Application.dataPath, "Scripts/Collectables/collectables.json");
         try
         {
@@ -38,15 +28,29 @@ public class CollectableContainer : MonoBehaviour
         {
             Debug.LogError(ex.Message);
         }
-        loadCollectables();
-        writeCollectables();
+
+        //Singleton
+        if (_instance != null && _instance != this)
+        {
+            loadCollectables();
+            writeCollectables();
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+            loadCollectables();
+            writeCollectables();
+        }
+
     }
 
-    private void writeCollectables()
+    public void writeCollectables()
     {
-        GameObject[] uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
-        Debug.Log("Cracckkkkk " + uiCollectables.Length);
-        for(int i = 0; i < uiCollectables.Length; i++)
+        uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
+        for (int i = 0; i < uiCollectables.Length; i++)
         {
             uiCollectables[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = _list.collectables[i].title;
             uiCollectables[i].transform.GetChild(1).GetComponent<Text>().text = _list.collectables[i].description;
@@ -86,17 +90,15 @@ public class CollectableContainer : MonoBehaviour
         writeCollectables();
         WriteRecord();
     }
-
-    public void DisabledCollectableList()
+    public GameObject[] GetUiCollectables()
     {
-        Debug.Log("hagoaoao");
-        this.transform.GetChild(0).GetComponent<Canvas>().enabled = false;
-        //this.gameObject.GetComponent<Canvas>().enabled = false;
+        return uiCollectables;
     }
 
 #if UNITY_EDITOR
     public void setFalseAll()
     {
+        uiCollectables = GameObject.FindGameObjectsWithTag("CollectableUI");
         CollectableListInfo falselist = _list;
         for (int i = 0; i < _list.collectables.Count; i++)
         {

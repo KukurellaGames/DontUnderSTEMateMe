@@ -22,17 +22,17 @@ public class DialogueManager : MonoBehaviour
     protected Dialogue dialogue;
 
     //Manejar las oraciones
-    Queue<string> sentences;
+    protected Queue<string> sentences;
 
     [SerializeField]
     protected GameObject dialoguePanel;
 
     [SerializeField]
-    protected TextMeshProUGUI displayText;
+    protected Text displayText;
 
-    private string activeSentence;
+    protected string activeSentence;
 
-    private bool isInConversation = false;
+    protected bool isInConversation = false;
 
     [SerializeField]
     protected float typingSpeed;
@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
 
    // private Image enterImage;
 
-    private vThirdPersonInput playerInput;
+    protected vThirdPersonInput playerInput;
 
     void Start()
     {
@@ -61,10 +61,17 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
 
+        //Aqui iria sonido
+        if (myAudio)
+        {
+            myAudio.clip = speakSound;
+            myAudio.Play();
+        }
+
         DisplayNextSentence();
     }
 
-    void DisplayNextSentence()
+    public  virtual void DisplayNextSentence()
     {
         
 
@@ -82,6 +89,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialoguePanel.transform.GetChild(1).GetComponent<Image>().enabled = false;
+        dialoguePanel.transform.GetChild(1).GetComponentInChildren<Text>().enabled = false;
 
         activeSentence = sentences.Dequeue();
         displayText.text = activeSentence;
@@ -90,21 +98,21 @@ public class DialogueManager : MonoBehaviour
         StartCoroutine(TypetheSentence(activeSentence));
     }
 
-    IEnumerator TypetheSentence(string sentence)
+    protected IEnumerator TypetheSentence(string sentence)
     {
         displayText.text = "";
 
         foreach (char letter in sentence.ToCharArray())
         {
             displayText.text += letter;
-            //Aqui iria sonido
-            //myAudio.PlayOneShot(speakSound);
+            
             yield return new WaitForSeconds(typingSpeed);
         }
         // TODO: Mostrar enter
         dialoguePanel.transform.GetChild(1).GetComponent<Image>().enabled = true;
+        dialoguePanel.transform.GetChild(1).GetComponentInChildren<Text>().enabled = true;
     }
-    private void OnTriggerEnter(Collider other)
+    protected void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -117,7 +125,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -127,7 +135,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected void Update()
     {
         if (isInConversation)
         {
@@ -138,7 +146,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void SetDialogColor()
+    protected void SetDialogColor()
     {
         Color color = new Color(0,0,0,160.0f/255.0f); // Default color
 

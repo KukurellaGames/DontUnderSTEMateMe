@@ -4,7 +4,7 @@
             "title": "1",
             "description": "lalala-1",
             "image": "image1.png",
-            "pickup": false
+            "pickup": true
         },
         {
             "title": "2",
@@ -40,13 +40,13 @@
             "title": "7",
             "description": "lalala-7",
             "image": "image7.png",
-            "pickup": false
+            "pickup": true
         },
         {
             "title": "8",
             "description": "lalala-8",
             "image": "image8.png",
-            "pickup": false
+            "pickup": true
         }
     ]
 }

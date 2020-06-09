@@ -11,6 +11,7 @@ TagManager:
   - CollectableUI
   - CollectableContainer
   - CollectableList
+  - CollectableExpanded
   layers:
   - Default
   - TransparentFX

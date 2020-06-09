@@ -6,42 +6,46 @@ public class Pause : MonoBehaviour
 {
     private bool active;
     private Canvas canvas;
-    private Canvas collectables;
-    private Canvas collectablesList;
 
     // Start is called before the first frame update
     void Start()
     {
-        collectables = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
+        DisabledCollectableList();
+        /*
+        collectables = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
         collectablesList = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(0).GetComponent<Canvas>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape) && !collectables.isActiveAndEnabled && !collectablesList.isActiveAndEnabled) 
-        {
-            Continue();
-        }
 
         if (Input.GetKeyDown(KeyCode.Escape) && !collectables.isActiveAndEnabled && collectablesList.isActiveAndEnabled)
         {
             DisabledCollectableList();
         }
+        */
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) /*&& !collectables.isActiveAndEnabled && !collectablesList.isActiveAndEnabled*/) 
+        {
+            Continue();
+        }
+        
+        
+    }
+    
     public void ShowCollectableList()
     {
-        collectablesList.enabled = true;
-        //this.gameObject.GetComponent<Canvas>().enabled = false;
+        transform.GetChild(1).localPosition = new Vector3(0, 0, 0);
+        transform.GetChild(2).localPosition = new Vector3(2000, 0, 0);
     }
      public void DisabledCollectableList()
      {
-        collectablesList.enabled = false;
-        //this.gameObject.GetComponent<Canvas>().enabled = true;
+        transform.GetChild(1).localPosition = new Vector3(2000, 0, 0);
+        transform.GetChild(2).localPosition = new Vector3(0, 0, 0);
      }
+
 
     public void Continue()
     {
