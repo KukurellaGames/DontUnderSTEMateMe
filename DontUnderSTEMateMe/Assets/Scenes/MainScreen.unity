@@ -562,7 +562,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0740c3d30b110d14d848ddb13a81b670, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5258f6b832322b144b290aafe4175870, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7927,16 +7927,14 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. '
+  m_Text: "La on\xEDrica aventura de Marie Curie, donde nos embarcaremos en una historia
+    de superaci\xF3n y retos personales. "
 --- !u!222 &1596851910
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8887,6 +8885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CollectableListMain
+      objectReference: {fileID: 0}
+    - target: {fileID: 7404615972776906706, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7404615972776906707, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
         type: 3}
