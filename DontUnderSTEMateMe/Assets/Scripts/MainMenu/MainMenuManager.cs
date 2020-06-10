@@ -6,7 +6,10 @@ public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] Animator[] animators;
 
-    
+    private void Start()
+    {
+        //OnMainMenu();
+    }
 
     public void OnPlayPressed()
     {

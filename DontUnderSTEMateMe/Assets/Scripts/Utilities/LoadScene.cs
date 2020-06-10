@@ -10,7 +10,6 @@ public class LoadScene : MonoBehaviour
     public string previousScene = " ";
     public static LoadScene Instance { get; private set; }
 
-    public Image loadImage;
     [Range(0.01f, 0.1f)]
     protected float speedAppear = 0.5f;
     [Range(0.01f, 0.1f)]
@@ -28,7 +27,6 @@ public class LoadScene : MonoBehaviour
             Instance = this;
             //To be active in all scenes
             DontDestroyOnLoad(this);
-            loadImage.gameObject.SetActive(false);
         }
         else
         {
@@ -49,19 +47,6 @@ public class LoadScene : MonoBehaviour
 
     private IEnumerator ShowLoadScene(string nameScene)
     {
-        loadImage.gameObject.SetActive(true);
-        Color c = loadImage.color;
-
-        c.a = 0.0f;
-
-        //Se hará un fundido para que se abra cuando esté totalmente visible
-        while (c.a < 1)
-        {
-            loadImage.color = c;
-            c.a += speedAppear;
-            yield return null;
-        }
-
         //Load image
         SceneManager.LoadScene(nameScene);
 
@@ -73,14 +58,5 @@ public class LoadScene : MonoBehaviour
 
         //CollectableLoad
         GameObject.FindGameObjectWithTag("CollectableContainer")?.GetComponent<CollectableContainer>()?.writeCollectables();
-
-        //When scene is loaded, the load image disappears
-        while (c.a > 0)
-        {
-            loadImage.color = c;
-            c.a -= speedDisappear;
-            yield return null;
-        }
-        loadImage.gameObject.SetActive(false);
     }
 }
