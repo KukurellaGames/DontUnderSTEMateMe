@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,18 +21,23 @@ public class UnlockingAbility : Ability
             Debug.LogError("[Unlocking Ability] Error getting animator reference");
 
         // Set idle particles to its initial state
-        IdleParticles.time = 5.0f;
-        for (int i = 0; i < IdleParticles.transform.childCount; i++)
+        try
         {
-            ParticleSystem idleKeys = IdleParticles.transform.GetChild(i).GetComponent<ParticleSystem>();
-            if (idleKeys != null)
+            IdleParticles.time = 5.0f;
+            for (int i = 0; i < IdleParticles.transform.childCount; i++)
             {
-                idleKeys.time = 5.0f;
+                ParticleSystem idleKeys = IdleParticles.transform.GetChild(i).GetComponent<ParticleSystem>();
+                if (idleKeys != null)
+                {
+                    idleKeys.time = 5.0f;
+                }
+
             }
-
+            IdleParticles.Play();
+        }catch(Exception e)
+        {
+            Debug.Log("Idle particles not found");
         }
-        IdleParticles.Play();
-
         // Set door locked
         IsLocked = false;
     }

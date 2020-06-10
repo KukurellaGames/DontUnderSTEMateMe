@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
 
     public void onPointerClick()
     {
+        Debug.Log("Change scene is triyng to change the scene");
         LoadScene.Instance.loadScene(loadScene.ToString());
     }
 
