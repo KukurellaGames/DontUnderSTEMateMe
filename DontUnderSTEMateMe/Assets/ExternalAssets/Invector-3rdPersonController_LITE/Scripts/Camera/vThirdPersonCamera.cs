@@ -92,7 +92,6 @@ public class vThirdPersonCamera : MonoBehaviour
 
         if (target == null)
         {
-            Debug.Log("hola2");
             target = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }

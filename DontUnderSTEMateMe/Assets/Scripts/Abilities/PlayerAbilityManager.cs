@@ -44,7 +44,6 @@ public class PlayerAbilityManager : MonoBehaviour
         {
             canUseAbility = true;
             abilityGameObject = other.gameObject;
-            Debug.Log("Entro");
         }
     }
 
@@ -54,7 +53,6 @@ public class PlayerAbilityManager : MonoBehaviour
         {
             canUseAbility = false;
             abilityGameObject = null;
-            Debug.Log("Salgo");
         }
     }
 

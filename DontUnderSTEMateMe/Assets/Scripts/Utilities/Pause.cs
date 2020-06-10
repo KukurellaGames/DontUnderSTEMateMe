@@ -13,15 +13,6 @@ public class Pause : MonoBehaviour
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
         DisabledCollectableList();
-        /*
-        collectables = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(1).GetComponent<Canvas>();
-        collectablesList = GameObject.FindGameObjectWithTag("CollectableContainer").transform.GetChild(0).GetComponent<Canvas>();
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !collectables.isActiveAndEnabled && collectablesList.isActiveAndEnabled)
-        {
-            DisabledCollectableList();
-        }
-        */
     }
 
     // Update is called once per frame
@@ -52,5 +43,10 @@ public class Pause : MonoBehaviour
         active = !active;
         canvas.enabled = active;
         Time.timeScale = (active) ? 0 : 1f;
+    }
+
+    public void Exit()
+    {
+        Time.timeScale = 1f;
     }
 }

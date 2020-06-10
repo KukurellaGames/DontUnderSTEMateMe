@@ -17,11 +17,13 @@ public class Platform : MonoBehaviour
 
     protected Vector2 offset;
     protected vThirdPersonController controller;
+    private GameObject actualPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         controller = player.GetComponent<vThirdPersonController>();
+        actualPlayer = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -30,24 +32,17 @@ public class Platform : MonoBehaviour
         if (player.gameObject == null)
         {
             player = GameObject.FindGameObjectWithTag("Player");
+            col = false;
+            player.transform.SetParent(null);
         }
-
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        jump = Input.GetButton("Jump");
-
-        
-        //Aquí comprobar si el personaje anda, camina o salta
-        if (horizontal != 0.0f || vertical != 0.0f || jump == true)
-            mov = true;
-        else
-            mov = false;
-
-        if (isHorizontal && col)
-            movementHorizontal();
+        if (actualPlayer.gameObject == null)
+        {
+            actualPlayer = GameObject.FindGameObjectWithTag("Player");
+            col = false;
+            actualPlayer.transform.SetParent(null);
+        }
         if (!isHorizontal && col)
             movVertical();
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -61,36 +56,12 @@ public class Platform : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             col = false;
-            player.transform.SetParent(null);
+            actualPlayer.transform.SetParent(null);
         }
-    }
-
-    private void movementHorizontal()
-    {
-        //Tendremos que actualizar la posición cuando salte
-        if (col == true && mov == false)
-        {
-            player.transform.position = new Vector3(this.transform.position.x + offset.x, this.transform.position.y, this.transform.position.z + offset.y);
-        }
-        else
-        {
-            offset.x = player.transform.position.x - this.transform.position.x;
-            offset.y = player.transform.position.z - this.transform.position.z;
-        }
-
-        Debug.Log(offset.x + "  " +offset.y);
-
     }
 
     private void movVertical()
     {
-        /*
-        if (col == true && mov == false)
-        {
-            player.transform.position = new Vector3(player.transform.position.x, this.transform.position.y, player.transform.position.z);
-        }*/
-
-        //Aquí hacer el parent
-        player.transform.SetParent(this.transform);
+        actualPlayer.transform.SetParent(this.transform);
     }
 }

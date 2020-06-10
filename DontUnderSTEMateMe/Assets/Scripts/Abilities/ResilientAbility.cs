@@ -10,6 +10,8 @@ public class ResilientAbility : Ability
     [SerializeField] private ParticleSystem IdleParticles;
     [SerializeField] private ParticleSystem ClimaxParticles;
 
+    [SerializeField] protected AudioSource ActionSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +67,7 @@ public class ResilientAbility : Ability
 
         // Start climax particles
         ClimaxParticles.Play();
+        ActionSound.Play();
         yield return new WaitForSeconds(2.5f);
 
         // Remove mesh and collider
