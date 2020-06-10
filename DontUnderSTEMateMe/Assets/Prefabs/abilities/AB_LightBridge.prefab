@@ -18928,7 +18928,7 @@ MonoBehaviour:
   ClimaxParticles: {fileID: 72460479}
   MaxAlpha: 0.4
   eachStepIncrement: 0.01
-  ActionSource: {fileID: 3006718894958471684}
+  ActionSound: {fileID: 3006718894958471684}
 --- !u!82 &3006718894958471684
 AudioSource:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class UnlockingAbility : Ability
     [SerializeField] private ParticleSystem IdleParticles;
     [SerializeField] private ParticleSystem ClimaxParticles;
 
+    [SerializeField] protected AudioSource ActionSound;
+
     private Animator animator;
 
     private bool IsLocked;
@@ -75,6 +77,7 @@ public class UnlockingAbility : Ability
 
             // Start climax particles
             ClimaxParticles.Play();
+            ActionSound.Play();
             yield return new WaitForSeconds(1.5f);
 
             // Open door

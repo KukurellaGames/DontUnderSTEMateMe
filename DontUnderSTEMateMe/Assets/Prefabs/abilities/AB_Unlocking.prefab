@@ -9652,7 +9652,7 @@ MonoBehaviour:
   abilityType: 0
   IdleParticles: {fileID: 1818803305}
   ClimaxParticles: {fileID: 1886761271498120812}
-  actionSound: {fileID: 8957371786129069795}
+  ActionSound: {fileID: 8957371786129069795}
 --- !u!82 &8957371786129069795
 AudioSource:
   m_ObjectHideFlags: 0
