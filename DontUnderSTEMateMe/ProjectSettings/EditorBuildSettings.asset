@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle/Level02.unity
     guid: 120450ab5758be34897e820c8cb161e8
+  - enabled: 1
+    path: Assets/Scenes/EpisodeCompleted.unity
+    guid: da680a5f5116a434a9f5daab977352fc
   m_configObjects: {}
