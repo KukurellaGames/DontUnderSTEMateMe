@@ -13,6 +13,8 @@ public class MRaysAbility : Ability
     [SerializeField] private float MaxAlpha;
     [SerializeField] private float eachStepIncrement;
 
+    [SerializeField] protected AudioSource ActionSound;
+
 
     private bool IsActivated;
 
@@ -76,6 +78,7 @@ public class MRaysAbility : Ability
 
             // Start climax particles
             ClimaxParticles.Play();
+            ActionSound.Play();
             yield return new WaitForSeconds(1.5f);
 
             /* Show result mesh */
