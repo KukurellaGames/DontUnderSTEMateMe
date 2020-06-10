@@ -11,7 +11,7 @@ public class HandlerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spikesList[0].SpikesMovement();
+        spikesList[1].SpikesMovement();
     }
 
     private void OnTriggerStay(Collider other)
