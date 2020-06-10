@@ -29,5 +29,6 @@ public enum Scenes
     Level01,
     Level02,
     Contact,
-    GameOver
+    GameOver,
+    EpisodeCompleted
 }
