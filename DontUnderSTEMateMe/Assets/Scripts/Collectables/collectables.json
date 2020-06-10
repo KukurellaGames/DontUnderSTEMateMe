@@ -1,50 +1,50 @@
 {
     "collectables": [
         {
-            "title": "1",
-            "description": "lalala-1",
+            "title": "Radio",
+            "description": "El descubrimiento del radio tuvo muy pronto consecuencias importantes, tanto en la medicina práctica como en la física teórica. Lo que hoy llamamos “radioterapia”, es decir, la aplicación de radiactividad al cuerpo humano enfermo, por medio del elemento radio, permite la lucha contra determinados tumores malignos (“radioterapia destructiva”) y también alteraciones de tipo inflamatorio o de tipo degenerativo, especialmente en la piel, algunos órganos internos y articulaciones (“radioterapia funcional”).",
             "image": "image1.png",
-            "pickup": false
+            "pickup": true
         },
         {
-            "title": "2",
-            "description": "lalala-2",
+            "title": "Polonio",
+            "description": "El 18 de julio de 1898, en la Escuela de Física y Química de París, Pierre Curie, y su esposa, Marie, presentaron una importante Memoria en la Academia francesa de Ciencias. En ella recogieron especialmente las experiencias de Marie, que en su tesis doctoral estudia específicamente los llamados “rayos de Becquerel” (radiaciones de naturaleza desconocida, emitidas espontáneamente por algunos metales como el uranio). Esta investigación dio pie al descubrimiento de un metal desconocido, al que decidieron llamar “polonio”, basándose en el nombre del país de origen de Marie.",
             "image": "image2.png",
             "pickup": false
         },
         {
-            "title": "3",
-            "description": "lalala-3",
+            "title": "Indivisibilidad del átomo",
+            "description": "La constatación de que elementos como el uranio emitían radiación se unió en la misma época al hallazgo del electrón para demostrar que el átomo no era indivisible como se creía. Por todo ello Marie Curie recibió no un premio Nobel, sino dos, siendo la primera persona en lograrlo y la única que lo ha hecho en dos disciplinas científicas distintas, Física y Química.",
             "image": "image3.png",
             "pickup": false
         },
         {
-            "title": "4",
-            "description": "lalala-4",
+            "title": "Primera guerra mundial",
+            "description": "Menos conocida, aunque igualmente bien documentada, es la labor que Curie llevó a cabo durante la Primera Guerra Mundial, inspirada por su espíritu humanitario y por su devoción hacia su país de acogida. Con el estallido del conflicto y la amenaza de una invasión alemana cerniéndose sobre París, la vida cotidiana quedó suspendida, incluyendo las investigaciones de Curie. El gobierno francés se trasladó a Burdeos, y allí viajó también la científica llevando su tesoro más preciado, un gramo de radio en un cofre de plomo, que depositó en la caja fuerte de un banco. Pero al contrario que otros, Curie no buscó refugio en Burdeos, sino que regresó a París. Deseosa de contribuir al esfuerzo bélico, compró bonos de guerra y quiso donar al gobierno las medallas de oro de sus dos premios Nobel, un regalo que no fue aceptado. En su lugar, optó por poner su ciencia al servicio del ejército francés.",
             "image": "image4.png",
             "pickup": false
         },
         {
-            "title": "5",
-            "description": "lalala-5",
+            "title": "Las máquinas portátiles de rayos X",
+            "description": "La investigadora sabía que en los campos de batalla el tiempo de reacción era crítico para curar a los soldados heridos, pero los médicos militares se veían obligados a trabajar con medios deficientes. En concreto, los rayos X se habían convertido en una herramienta de enorme utilidad para los cirujanos desde su descubrimiento por Wilhelm Röntgen en 1895, pero las máquinas sólo estaban disponibles en los grandes hospitales. Curie se propuso llevar la radiología hasta las líneas del frente en automóviles con máquinas de rayos X portátiles.",
             "image": "image5.png",
             "pickup": false
         },
         {
-            "title": "6",
-            "description": "lalala-6",
+            "title": "Ataúd de plomo",
+            "description": "Su cuerpo fue enterrado en un ataúd de plomo, y durante décadas se presumió que fue la contaminación con radio la que le causó la muerte. Pero cuando en 1995 los científicos no hallaron niveles peligrosos de radio en sus restos, la Oficina Francesa de Protección Contra las Radiaciones Ionizantes concluyó que “Curie no pudo haber estado expuesta a niveles letales de radio mientras estaba viva”. Los mismos expertos sugerían que “la enfermedad de Curie se debió más probablemente a su uso de la radiografía durante la Primera Guerra Mundial”.",
             "image": "image6.png",
             "pickup": false
         },
         {
-            "title": "7",
-            "description": "lalala-7",
+            "title": "Marido",
+            "description": "Convertida en madame Curie, tuvo muy pronto a la primera de sus dos hijas, Irène, pero no renunció a su trabajo científico. Pierre la ayudó a preparar el doctorado y, cuando fue evidente que los trabajos de ella prometían mejores resultados para la ciencia que sus propias investigaciones sobre los minerales, abandonó sus planes y se convirtió en el primer asesor-colaborador declarado de aquella inteligente y ambiciosa mujer. A partir de entonces (1898) trabajaron siempre juntos y firmaron conjuntamente todos los trabajos y comunicaciones científicas.",
             "image": "image7.png",
             "pickup": false
         },
         {
-            "title": "8",
-            "description": "lalala-8",
+            "title": "Hijas",
+            "description": "Eve se encargó de escribir la biografía de la gran Marie Curie, quien en el último periodo de su vida encontró en ella, su hija menor, a una confidente. Irene se convirtió en una destacada científica que obtuvo, junto a su esposo, el Nobel de Química de 1935. La relación de Curie con sus dos hijas fue tan fascinante como la vida de cada una de ellas.",
             "image": "image8.png",
             "pickup": false
         }
