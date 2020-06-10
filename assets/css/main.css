@@ -1545,7 +1545,7 @@ input, select, textarea {
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
+			/*width: 40rem;*/
 			max-width: 100%;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
@@ -1668,4 +1668,66 @@ input, select, textarea {
 
 #game-title {
 	font-family: 'Oswald', sans-serif;
+}
+
+/* Gallery */ 
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 4px;
+  }
+  
+  /* Create four equal columns that sits next to each other */
+  .column {
+	flex: 25%;
+	max-width: 50%;
+	padding: 0 4px;
+  }
+  
+  .column img {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+	border-radius: 5px;
+	border: 2px solid white;
+  }
+
+  .column img:hover {
+	margin-top: 8px;
+	vertical-align: middle;
+	width: 100%;
+	border-radius: 5px;
+	border: 2px solid #9932CC;
+  }
+  
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  @media screen and (max-width: 800px) {
+	.column {
+	  flex: 50%;
+	  max-width: 50%;
+	}
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+	.column {
+	  flex: 100%;
+	  max-width: 100%;
+	}
+  }
+
+#gallery {
+	width: 80rem;
+}
+
+#game {
+	width: 40rem;
+}
+
+#play {
+	width: 40rem;
+}
+
+#team {
+	width: 40rem;
 }
