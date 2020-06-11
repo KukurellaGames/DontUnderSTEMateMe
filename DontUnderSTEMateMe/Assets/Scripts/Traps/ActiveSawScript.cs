@@ -5,6 +5,8 @@ using UnityEngine;
 public class ActiveSawScript : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField]
+    private AudioSource _clip;
 
     private void Start()
     {
@@ -15,6 +17,22 @@ public class ActiveSawScript : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             animator.SetTrigger("Active");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _clip.Play();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _clip.Stop();
         }
     }
 }
