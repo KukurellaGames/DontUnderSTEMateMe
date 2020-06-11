@@ -130,6 +130,7 @@ public class DialogueManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInConversation = false;
+            playerInput.isInDialog = false;
             dialoguePanel.SetActive(false);
             StopAllCoroutines();
         }
