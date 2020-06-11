@@ -17,9 +17,9 @@ public class CanvasMenu : MonoBehaviour
         AbilityUI = GameObject.Find("AbilityUI")?.GetComponent<Canvas>();
         ImageUI = GameObject.Find("ImageLoader")?.GetComponent<Canvas>();
 
-        if (lifesUI != null) lifesUI.enabled = false;
-        if (AbilityUI != null) AbilityUI.enabled = false;
-        if (ImageUI != null) ImageUI.enabled = false;
+        if (lifesUI == null) lifesUI.enabled = false;
+        if (AbilityUI == null) AbilityUI.enabled = false;
+        //if (ImageUI == null) ImageUI.enabled = false;
     }
 
     public void ActivateUI()
