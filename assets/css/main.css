@@ -1320,7 +1320,7 @@ input, select, textarea {
 				-webkit-transition-delay: 0.25s;
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
-				padding: 3rem 2rem;
+				padding: 2rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
 			}
@@ -1783,12 +1783,12 @@ div.gallery {
 	width: 40rem;
 }
 
-.thumbnail img {
+.thumbnail iframe {
 	border-radius: 5px;
 	border: 2px solid white;
 }
 
-.thumbnail img:hover {
+.thumbnail iframe:hover {
 	border-radius: 5px;
 	border: 2px solid #9932CC;
 }
