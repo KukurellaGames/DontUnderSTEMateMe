@@ -9,6 +9,7 @@ public class Pause : MonoBehaviour
     private Canvas lifesUI;
     private Canvas AbilityUI;
     private Canvas ImageUI;
+    private Canvas _canvasCollectable;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class Pause : MonoBehaviour
         lifesUI = GameObject.Find("LifesUI")?.GetComponent<Canvas>();
         AbilityUI = GameObject.Find("AbilityUI")?.GetComponent<Canvas>();
         ImageUI = GameObject.Find("ImageLoader")?.GetComponent<Canvas>();
+        _canvasCollectable = GameObject.FindGameObjectWithTag("CollectableExpanded")?.GetComponent<Canvas>();
         activateUI();
         canvas = GetComponent<Canvas>();
         canvas.enabled = false;
@@ -50,6 +52,7 @@ public class Pause : MonoBehaviour
         active = !active;
         canvas.enabled = active;
         Time.timeScale = (active) ? 0 : 1f;
+        if (_canvasCollectable.enabled) _canvasCollectable.enabled = false;
     }
 
     public void Exit()

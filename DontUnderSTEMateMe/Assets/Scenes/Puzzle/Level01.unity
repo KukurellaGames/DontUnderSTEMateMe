@@ -5929,7 +5929,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteCollectable
       value: 
-      objectReference: {fileID: 21300000, guid: 172c80d348d849d469efe5620af4eaad,
+      objectReference: {fileID: 21300000, guid: 6682b43a8c93a5f489295b3a1a146ee4,
         type: 3}
     - target: {fileID: 3989965230796408114, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
         type: 3}
@@ -18534,7 +18534,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteCollectable
       value: 
-      objectReference: {fileID: 21300000, guid: b775202137296e0479b96a53d7f99400,
+      objectReference: {fileID: 21300000, guid: 6682b43a8c93a5f489295b3a1a146ee4,
         type: 3}
     - target: {fileID: 3989965230796408114, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
         type: 3}
@@ -41147,7 +41147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1562683066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.17, y: 4.44, z: 2.23}
+  m_LocalPosition: {x: -4.05, y: 4.4, z: 1.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 566545530}
@@ -44250,7 +44250,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spriteCollectable
       value: 
-      objectReference: {fileID: 21300000, guid: 51e037ffe13e81c4d87245af99f6986b,
+      objectReference: {fileID: 21300000, guid: 6682b43a8c93a5f489295b3a1a146ee4,
         type: 3}
     - target: {fileID: 3989965230796408114, guid: 90ea0ffadd56f1e44ba200fd6a0d3e76,
         type: 3}
