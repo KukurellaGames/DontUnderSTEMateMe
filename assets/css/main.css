@@ -1780,17 +1780,24 @@ div.gallery {
 /* END TEAM */
 
 /* TRAILER */
-#trailer {
-	width: 40rem;
-}
-
 .thumbnail iframe {
 	border-radius: 5px;
-	border: 2px solid white;
-}
-
-.thumbnail iframe:hover {
-	border-radius: 5px;
-	border: 2px solid #9932CC;
 }
 /* END TRAILER */
+
+/* DOWNLOAD BUTTON */
+.download {
+	background-color: RoyalBlue;
+	border: none;
+	color: white;
+	padding: 12px 30px;
+	cursor: pointer;
+	font-size: 20px;
+	border-radius: 2px;
+}
+
+/* Darker background on mouse-over */
+.download:hover {
+	background-color: #9932CC;
+	border-radius: 2px;
+}
