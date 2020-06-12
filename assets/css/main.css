@@ -1736,6 +1736,7 @@ input, select, textarea {
 
 div.gallery {
 	border: 1px solid #ccc;
+	overflow: hidden;
   }
   
   div.gallery img {
