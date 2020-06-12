@@ -5,10 +5,12 @@ using UnityEngine;
 public class Life : MonoBehaviour
 {
     private LifeManager _life;
+    private AudioSource _lifeSound;
 
     void Start()
     {
         _life = GameObject.FindGameObjectWithTag("GameController").GetComponent<LifeManager>();
+        _lifeSound = transform.parent.GetComponentInParent<AudioSource>();
     }
     void Update()
     {
@@ -18,8 +20,8 @@ public class Life : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _life.IncrementLife();
+        _lifeSound.Play();
         Destroy(transform.parent.gameObject);
-        //Destroy(this.gameObject);
     }
    
 }

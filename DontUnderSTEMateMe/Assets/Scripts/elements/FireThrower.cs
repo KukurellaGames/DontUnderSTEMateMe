@@ -17,11 +17,12 @@ public class FireThrower : MonoBehaviour
     private ParticleSystem particles;
     private BoxCollider fireCollider;
     private bool isActive = true;
-
+    private AudioSource _audSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        _audSource = GetComponent<AudioSource>();
         // Particles
         particles = GetComponentInChildren<ParticleSystem>();
         var main = particles.main;
@@ -31,7 +32,9 @@ public class FireThrower : MonoBehaviour
         fireCollider = GetComponentInChildren<BoxCollider>();
         fireCollider.enabled = false;
 
+        
         StartCoroutine(FireThrowerRoutine());
+        
     }
 
     private IEnumerator FireThrowerRoutine()
@@ -40,6 +43,7 @@ public class FireThrower : MonoBehaviour
         
         while (isActive)
         {
+            _audSource.Play();
             particles.Play();
             // Spawn collider
             fireCollider.enabled = true;
@@ -48,6 +52,8 @@ public class FireThrower : MonoBehaviour
             fireCollider.enabled = false;
             yield return new WaitForSeconds(IdleTime);
         }
+
+        _audSource.Stop();
       
     }
 }
