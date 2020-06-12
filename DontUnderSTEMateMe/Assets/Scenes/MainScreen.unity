@@ -7951,8 +7951,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1031172866}
   m_HandleRect: {fileID: 1031172865}
   m_Direction: 0
-  m_Value: 0.0000000838683
-  m_Size: 0.566622
+  m_Value: 0.00000016773657
+  m_Size: 0.56662196
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8945,6 +8945,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ca3397caf13492f42954d7c116542f6d,
         type: 3}
+    - target: {fileID: 7404615971427893417, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7404615971544074233, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -8991,6 +8996,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 361654ec0516d724b86ae4d0b90eed38,
         type: 3}
+    - target: {fileID: 7404615972071923084, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7404615972378771740, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
         type: 3}
       propertyPath: m_Sprite
@@ -9008,6 +9018,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 51e037ffe13e81c4d87245af99f6986b,
         type: 3}
+    - target: {fileID: 7404615972654201899, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7404615972776906706, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
         type: 3}
       propertyPath: m_Name
@@ -9127,7 +9142,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1bdcba8bf4fb21443a23e396bb642092,
+      objectReference: {fileID: 21300000, guid: 111bb01e2ed690c4f8c69b00603269dc,
         type: 3}
     - target: {fileID: 7404615972941482401, guid: f991ae1e52f769b4ca84cf66bbcbcff8,
         type: 3}

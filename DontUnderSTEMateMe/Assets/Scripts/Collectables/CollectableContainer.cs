@@ -17,6 +17,7 @@ public class CollectableContainer : MonoBehaviour
     void Awake()
     {
         _path = Path.Combine(Application.dataPath, "Scripts/Collectables/collectables.json");
+        //_path = Path.Combine(Application.dataPath, "Save/collectables.json");
         try
         {
             if (!File.Exists(_path))
